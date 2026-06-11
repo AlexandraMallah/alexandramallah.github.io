@@ -36,7 +36,7 @@
 }
 </script>
 <script>
-  var BUILD = 14;
+  var BUILD = 15;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -191,6 +191,11 @@
   .online span[aria-hidden]{display:inline-block;transition:transform .2s ease}
   .online:hover span[aria-hidden]{transform:translate(2px,-2px)}
   .home-blob{transition:transform .25s ease-out}
+  /* Encadré entièrement cliquable (lien étiré sur toute l'entrée/carte) */
+  .card{position:relative}
+  .entry .online, .card .online{position:static}
+  .entry .online::after, .card .online::after{content:"";position:absolute;inset:0;z-index:1;cursor:pointer}
+  .entry:hover .online, .card:hover .online{text-decoration:underline}
 
   @media(max-width:720px){
     body{font-size:16px}
@@ -539,7 +544,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v14</div>
+<div class="ver" id="ver">v15</div>
 
 <script>
   var _reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
