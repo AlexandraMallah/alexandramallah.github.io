@@ -36,7 +36,7 @@
 }
 </script>
 <script>
-  var BUILD = 19;
+  var BUILD = 20;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -160,8 +160,10 @@
   .entry .yr{font-family:var(--serif);font-size:17px;color:var(--gold);font-weight:500;padding-top:2px;white-space:nowrap}
   .entry .t{margin:0 0 1px;font-size:15.5px;color:var(--ink);line-height:1.4}
   .entry .src{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.4}
-  .online{font-size:12px;letter-spacing:.02em;color:var(--gold);white-space:nowrap}
-  .online:hover{text-decoration:underline}
+  .online{font-size:13px;letter-spacing:.02em;color:var(--gold-soft);white-space:nowrap}
+  .online:hover{color:var(--gold)}
+  .entry:hover .online, .card:hover .online{color:var(--gold)}
+  .vis-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
   .entry.forthcoming{opacity:.55}
   .status{display:inline-block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);
     border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-left:8px;vertical-align:middle}
@@ -204,7 +206,6 @@
   .card{position:relative}
   .entry .online, .card .online{position:static}
   .entry .online::after, .card .online::after{content:"";position:absolute;inset:0;z-index:1;cursor:pointer}
-  .entry:hover .online, .card:hover .online{text-decoration:underline}
 
   @media(max-width:720px){
     body{font-size:16px}
@@ -334,10 +335,10 @@
       <div class="group">
         <h3><span class="en">From my PhD thesis</span><span class="fr">Issus de ma thèse</span></h3>
         <div class="gallery" oncontextmenu="return false">
-          <figure class="doc"><img src="images/memorial-noms.jpg" loading="lazy" draggable="false" alt="Collage participatif des noms de victimes de féminicides, Paris"><figcaption><span class="en">Participatory collage: adding the names of femicide victims, Paris.</span><span class="fr">Collage participatif : ajout des noms de victimes de féminicides, Paris.</span></figcaption></figure>
-          <figure class="doc"><img src="images/memorial-trans.jpg" loading="lazy" draggable="false" alt="Mémorial des personnes trans décédées, Paris, 2023"><figcaption><span class="en">Memorial to trans people who died, Paris (2023).</span><span class="fr">Mémorial des personnes trans décédées, Paris (2023).</span></figcaption></figure>
-          <figure class="doc"><img src="images/memorial-rose.jpg" loading="lazy" draggable="false" alt="Rose déposée sur le mur de collages, Paris"><figcaption><span class="en">A rose left on the collage wall, Paris.</span><span class="fr">Rose déposée sur le mur de collages, Paris.</span></figcaption></figure>
-          <figure class="doc"><img src="images/memorial-bougies.jpg" loading="lazy" draggable="false" alt="Bougies au pied du mémorial, Paris"><figcaption><span class="en">Candles at the foot of the memorial, Paris.</span><span class="fr">Bougies au pied du mémorial, Paris.</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-mur.jpg" loading="lazy" draggable="false" alt="Mur de noms du mémorial des victimes de féminicides, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2023</span><span class="fr">Rue du Chevaleret, Paris · janvier 2023</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-noms.jpg" loading="lazy" draggable="false" alt="Ajout de noms sur le mémorial, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2023</span><span class="fr">Rue du Chevaleret, Paris · janvier 2023</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-anonymes.jpg" loading="lazy" draggable="false" alt="Mémorial, noms et anonymes, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2023</span><span class="fr">Rue du Chevaleret, Paris · janvier 2023</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-rose.jpg" loading="lazy" draggable="false" alt="Rose blanche déposée sur le mémorial, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2023</span><span class="fr">Rue du Chevaleret, Paris · janvier 2023</span></figcaption></figure>
         </div>
       </div>
 
@@ -361,7 +362,7 @@
       <h3><span class="en">PhD thesis</span><span class="fr">Thèse de doctorat</span></h3>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t"><em>Géographie de l'invisible : les territoires de la mémoire des femmes</em></p>
-        <p class="src"><span class="en">PhD in Geography, EHESS & UMR Géographie-cités · Supervised by Nicolas Verdier · Defended 14 November 2025.</span><span class="fr">Thèse de doctorat en géographie, EHESS & UMR Géographie-cités · Direction : Nicolas Verdier · Soutenue le 14 novembre 2025.</span> · <a class="online" href="https://theses.fr/2025EHES0116" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="en">PhD in Geography, EHESS & UMR Géographie-cités · Supervised by Nicolas Verdier · Defended 14 November 2025.</span><span class="fr">Thèse de doctorat en géographie, EHESS & UMR Géographie-cités · Direction : Nicolas Verdier · Soutenue le 14 novembre 2025.</span> · <a class="online" href="https://theses.fr/2025EHES0116" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
     </div>
 
     <div class="group">
@@ -371,10 +372,10 @@
         <p class="src"><em>Nouvelles questions féministes</em>, vol. 46, n°1 · <span class="en">accepted at first review.</span><span class="fr">article accepté en première évaluation.</span></p></div></div>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">«&nbsp;Présentes mais invisibles : les femmes dans la toponymie parisienne&nbsp;»</p>
-        <p class="src"><em>Annales de Géographie</em>, n°764 (4), p. 76–101 · <a class="online" href="https://shs.cairn.info/revue-annales-de-geographie-2025-4-page-76?lang=fr&amp;tab=resume" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><em>Annales de Géographie</em>, n°764 (4), p. 76–101 · <a class="online" href="https://shs.cairn.info/revue-annales-de-geographie-2025-4-page-76?lang=fr&amp;tab=resume" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">«&nbsp;Les collages contre les féminicides : le signe de l'appropriation de l'espace public&nbsp;»</p>
-        <p class="src"><em>Mosaïque</em>, n°21 · <a class="online" href="https://www.peren-revues.fr/mosaique/2588" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><em>Mosaïque</em>, n°21 · <a class="online" href="https://www.peren-revues.fr/mosaique/2588" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
     </div>
 
     <div class="group">
@@ -394,17 +395,17 @@
       <h3><span class="en">Datasets</span><span class="fr">Bases de données</span></h3>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">«&nbsp;Genre des odonymes parisiens. Analyse des odonymes parisiens selon une approche genrée&nbsp;»</p>
-        <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.5BB98B95 · <a class="online" href="https://doi.org/10.34847/NKL.5BB98B95" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.5BB98B95 · <a class="online" href="https://doi.org/10.34847/NKL.5BB98B95" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">«&nbsp;Base de données des collages féministes parisiens (2019–2024)&nbsp;»</p>
-        <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.ABE2875S · <a class="online" href="https://doi.org/10.34847/NKL.ABE2875S" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.ABE2875S · <a class="online" href="https://doi.org/10.34847/NKL.ABE2875S" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
     </div>
 
     <div class="group">
       <h3><span class="en">Outreach</span><span class="fr">Vulgarisation</span></h3>
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t"><span class="en">Guest contribution to the MOOC <em>Dénommer le monde : la politique des toponymes</em></span><span class="fr">Contribution au MOOC <em>Dénommer le monde : la politique des toponymes</em></span></p>
-        <p class="src"><span class="en">Module “Dominations et toponymie : postcolonialité et genre”, dir. Frédéric Giraut — UNESCO Chair in inclusive toponymy, University of Geneva. Segments: «&nbsp;Théories du genre dans l'espace public&nbsp;», «&nbsp;Les odonymes féminins dans le monde&nbsp;», «&nbsp;Un cas d'étude, la ville de Paris&nbsp;».</span><span class="fr">Module «&nbsp;Dominations et toponymie : postcolonialité et genre&nbsp;», sous la direction de Frédéric Giraut — Chaire UNESCO en toponymie inclusive, Université de Genève. Capsules : «&nbsp;Théories du genre dans l'espace public&nbsp;», «&nbsp;Les odonymes féminins dans le monde&nbsp;», «&nbsp;Un cas d'étude, la ville de Paris&nbsp;».</span> · <a class="online" href="https://www.unige.ch/sciences-societe/geo/etudes/mooc-denommer-le-monde-la-politique-des-toponymes" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="en">Module “Dominations et toponymie : postcolonialité et genre”, dir. Frédéric Giraut — UNESCO Chair in inclusive toponymy, University of Geneva. Segments: «&nbsp;Théories du genre dans l'espace public&nbsp;», «&nbsp;Les odonymes féminins dans le monde&nbsp;», «&nbsp;Un cas d'étude, la ville de Paris&nbsp;».</span><span class="fr">Module «&nbsp;Dominations et toponymie : postcolonialité et genre&nbsp;», sous la direction de Frédéric Giraut — Chaire UNESCO en toponymie inclusive, Université de Genève. Capsules : «&nbsp;Théories du genre dans l'espace public&nbsp;», «&nbsp;Les odonymes féminins dans le monde&nbsp;», «&nbsp;Un cas d'étude, la ville de Paris&nbsp;».</span> · <a class="online" href="https://www.unige.ch/sciences-societe/geo/etudes/mooc-denommer-le-monde-la-politique-des-toponymes" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">«&nbsp;Raconte-moi ta thèse #13 — Ce que le matrimoine fait au patrimoine&nbsp;»</p>
         <p class="src">EHESS Alumni.</p></div></div>
@@ -447,16 +448,16 @@
         <p class="src">Journée d'étude «&nbsp;Du réel aux modèles : concilier l'objectif d'abstraction et l'imprécision de l'information&nbsp;», Paris.</p></div></div>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">«&nbsp;Mémoire des genres : l'espace urbain comme une archive&nbsp;»</p>
-        <p class="src">Journée d'étude internationale SFR ALLHiS «&nbsp;Genre, mémoire et sources&nbsp;», Saint-Étienne · <a class="online" href="https://www.fabula.org/actualites/126256/genre-memoire-et-sources.html" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src">Journée d'étude internationale SFR ALLHiS «&nbsp;Genre, mémoire et sources&nbsp;», Saint-Étienne · <a class="online" href="https://www.fabula.org/actualites/126256/genre-memoire-et-sources.html" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">«&nbsp;À l'intersection de la commémoration et des mobilisations sociales : les collages commémorant des victimes de féminicides&nbsp;»</p>
-        <p class="src">Journée d'étude EHESS – Université de Genève «&nbsp;Enjeux féministes au prisme des graphies exposées&nbsp;», Aubervilliers · <a class="online" href="https://www.unige.ch/gedt/accueil/actualites-2024/enjeux-feministes-au-prisme-des-graphies-exposees/" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src">Journée d'étude EHESS – Université de Genève «&nbsp;Enjeux féministes au prisme des graphies exposées&nbsp;», Aubervilliers · <a class="online" href="https://www.unige.ch/gedt/accueil/actualites-2024/enjeux-feministes-au-prisme-des-graphies-exposees/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t">«&nbsp;De la signature au monument : de quoi les collages contre les féminicides sont-ils le signe ?&nbsp;»</p>
-        <p class="src">Colloque «&nbsp;Signes, symboles, symptômes&nbsp;», Grenoble · <a class="online" href="https://iphig.univ-grenoble-alpes.fr/sites/default/files/Mediatheque/Colloques/affiche_doctorants_site.pdf" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src">Colloque «&nbsp;Signes, symboles, symptômes&nbsp;», Grenoble · <a class="online" href="https://iphig.univ-grenoble-alpes.fr/sites/default/files/Mediatheque/Colloques/affiche_doctorants_site.pdf" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien : le cas des odonymes&nbsp;»</p>
-        <p class="src">Journée d'étude «&nbsp;Femmes et odonymes&nbsp;» (PROGEVI), Lab'URBA, Champs-sur-Marne · <a class="online" href="https://progevi.hypotheses.org/94" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src">Journée d'étude «&nbsp;Femmes et odonymes&nbsp;» (PROGEVI), Lab'URBA, Champs-sur-Marne · <a class="online" href="https://progevi.hypotheses.org/94" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
     </div>
 
     <div class="group">
@@ -479,7 +480,7 @@
       <h3><span class="en">Invited scientific events</span><span class="fr">Invitations à des événements scientifiques</span></h3>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">“Towards a gender inclusive cityscape”</p>
-        <p class="src"><span class="en">Side event, 87th session of the UN CEDAW Committee</span><span class="fr">Évènement parallèle à la 87ᵉ session du Comité CEDAW de l'ONU</span> — Chaire UNESCO «&nbsp;Dénommer le monde&nbsp;», Genève · <a class="online" href="https://www.unige.ch/internationalrelations/en/iosngos/pre/events/towards-gender-inclusive-cityscape" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="en">Side event, 87th session of the UN CEDAW Committee</span><span class="fr">Évènement parallèle à la 87ᵉ session du Comité CEDAW de l'ONU</span> — Chaire UNESCO «&nbsp;Dénommer le monde&nbsp;», Genève · <a class="online" href="https://www.unige.ch/internationalrelations/en/iosngos/pre/events/towards-gender-inclusive-cityscape" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t"><span class="en">Moderation — “Narratives, representations, imaginaries and territorial identities”</span><span class="fr">Modération de l'axe «&nbsp;Récits, représentations, imaginaires et identités territoriales&nbsp;»</span></p>
         <p class="src"><span class="en">Study day of the master's programme Territoires, Espaces et Sociétés (EHESS), Aubervilliers.</span><span class="fr">Journée d'étude du master Territoires, Espaces et Sociétés (EHESS), Aubervilliers.</span></p></div></div>
@@ -517,22 +518,22 @@
     <div class="group">
       <div class="entry"><div class="yr">2026</div><div>
         <p class="t">«&nbsp;Rue Simone-Veil, rue Rosa-Parks… Les personnalités féminines désormais privilégiées pour baptiser les nouvelles voies&nbsp;»</p>
-        <p class="src"><span class="outlet">Le Monde</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Adel Miliani & Manon Romain · <a class="online" href="https://www.lemonde.fr/les-decodeurs/article/2026/01/11/rue-simone-veil-rue-rosa-parks-les-personnalites-feminines-desormais-privilegiees-pour-baptiser-les-nouvelles-voies_6661351_4355770.html" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="outlet">Le Monde</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Adel Miliani & Manon Romain · <a class="online" href="https://www.lemonde.fr/les-decodeurs/article/2026/01/11/rue-simone-veil-rue-rosa-parks-les-personnalites-feminines-desormais-privilegiees-pour-baptiser-les-nouvelles-voies_6661351_4355770.html" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">«&nbsp;#MeToo odonymique : les débaptisations de lieux publics au nom de l'abbé Pierre&nbsp;»</p>
-        <p class="src"><span class="outlet">Libération</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Margaux Gable · <a class="online" href="https://www.liberation.fr/societe/rues-squares-ecoles-partout-en-france-les-debaptisations-de-lieux-publics-au-nom-de-labbe-pierre-sont-en-cours-20241009_437TDJJYKBGAFIBH7R6XUWGJ3A/" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="outlet">Libération</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Margaux Gable · <a class="online" href="https://www.liberation.fr/societe/rues-squares-ecoles-partout-en-france-les-debaptisations-de-lieux-publics-au-nom-de-labbe-pierre-sont-en-cours-20241009_437TDJJYKBGAFIBH7R6XUWGJ3A/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">«&nbsp;Le mouvement Collages Féminicides de Paris fête ses cinq ans&nbsp;»</p>
-        <p class="src"><span class="outlet">L'Humanité</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Léa Petit Scalogna · <a class="online" href="https://www.humanite.fr/feminisme/feminisme/depuis-un-quinquennat-les-feministes-sont-dans-la-rue-pas-au-gouvernement-le-mouvement-collages-feminicides-de-paris-fete-ses-cinq-ans-dexistence" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="outlet">L'Humanité</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Léa Petit Scalogna · <a class="online" href="https://www.humanite.fr/feminisme/feminisme/depuis-un-quinquennat-les-feministes-sont-dans-la-rue-pas-au-gouvernement-le-mouvement-collages-feminicides-de-paris-fete-ses-cinq-ans-dexistence" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t">«&nbsp;La féminisation des noms de lieux évolue, mais il reste peu de place&nbsp;»</p>
-        <p class="src"><span class="outlet">France Inter</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Juliette Geay · <a class="online" href="https://www.radiofrance.fr/franceinter/pantin-pantine-la-feminisation-des-noms-de-lieux-evolue-assez-vite-mais-il-reste-peu-de-place-9639795" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="outlet">France Inter</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Juliette Geay · <a class="online" href="https://www.radiofrance.fr/franceinter/pantin-pantine-la-feminisation-des-noms-de-lieux-evolue-assez-vite-mais-il-reste-peu-de-place-9639795" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t">«&nbsp;La ville de Pantin rebaptisée "Pantine" : pourquoi ça crispe tant ?&nbsp;»</p>
-        <p class="src"><span class="outlet">Le Parisien</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Christine Mateus · <a class="online" href="https://www.leparisien.fr/seine-saint-denis-93/la-ville-de-pantin-rebaptisee-pantine-pourquoi-ca-crispe-tant-04-01-2023-CO36ASKECRAUNOANYE62QH2KPM.php" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="outlet">Le Parisien</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Christine Mateus · <a class="online" href="https://www.leparisien.fr/seine-saint-denis-93/la-ville-de-pantin-rebaptisee-pantine-pourquoi-ca-crispe-tant-04-01-2023-CO36ASKECRAUNOANYE62QH2KPM.php" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">«&nbsp;5 ans après #MeToo, a-t-on féminisé les noms de lieux ?&nbsp;»</p>
-        <p class="src"><span class="outlet">France Culture</span> — <span class="en">“Géographie à la carte”.</span><span class="fr">émission «&nbsp;Géographie à la carte&nbsp;».</span> · <a class="online" href="https://www.radiofrance.fr/franceculture/podcasts/geographie-a-la-carte/geographie-a-la-carte-5-ans-apres-metoo-a-t-on-feminise-les-noms-de-lieux-7209645" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
+        <p class="src"><span class="outlet">France Culture</span> — <span class="en">“Géographie à la carte”.</span><span class="fr">émission «&nbsp;Géographie à la carte&nbsp;».</span> · <a class="online" href="https://www.radiofrance.fr/franceculture/podcasts/geographie-a-la-carte/geographie-a-la-carte-5-ans-apres-metoo-a-t-on-feminise-les-noms-de-lieux-7209645" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
     </div>
   </div>
 </section>
@@ -555,7 +556,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v19</div>
+<div class="ver" id="ver">v20</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><img id="lightbox-img" src="" alt="" draggable="false"></div>
 
