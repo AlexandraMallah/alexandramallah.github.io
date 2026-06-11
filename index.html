@@ -68,12 +68,12 @@
   .burger{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
 
   /* Views */
-  .view{display:none;padding:72px 0 60px;min-height:64vh}
+  .view{display:none;padding:54px 0 56px;min-height:64vh}
   .view.active{display:block;animation:fade .35s ease}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
   h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6vw,60px);line-height:1.08;margin:0 0 24px;letter-spacing:.005em}
-  h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,38px);line-height:1.12;margin:0 0 26px}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,38px);line-height:1.12;margin:0 0 18px}
   h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 10px}
   p{margin:0 0 18px}
   em{font-style:italic}
@@ -120,13 +120,13 @@
   .doc-ph{position:absolute;top:18px;left:18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft)}
 
   /* Lists */
-  .group{margin-bottom:26px}
-  .group h3{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:0 0 8px;padding-bottom:7px;border-bottom:1px solid var(--line)}
-  .entry{display:grid;grid-template-columns:58px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--line-soft)}
+  .group{margin-bottom:14px}
+  .group h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin:0 0 2px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+  .entry{display:grid;grid-template-columns:54px 1fr;gap:14px;padding:7px 0;border-bottom:1px solid var(--line-soft)}
   .entry:last-child{border-bottom:none}
-  .entry .yr{font-family:var(--serif);font-size:19px;color:var(--gold);font-weight:500;padding-top:1px}
-  .entry .t{margin:0 0 3px;font-size:16px;color:var(--ink);line-height:1.5}
-  .entry .src{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5}
+  .entry .yr{font-family:var(--serif);font-size:18px;color:var(--gold);font-weight:500;padding-top:1px}
+  .entry .t{margin:0 0 1px;font-size:15.5px;color:var(--ink);line-height:1.4}
+  .entry .src{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.4}
   .online{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;letter-spacing:.03em;color:var(--gold);
     border:1px solid var(--line);border-radius:999px;padding:3px 11px;margin-top:7px;background:var(--surface);transition:.2s;white-space:nowrap}
   .online:hover{border-color:var(--gold-soft);background:#f1e8d6;text-decoration:none}
@@ -420,7 +420,7 @@
 <footer>© 2026 Alexandra Mallah</footer>
 
 <script>
-  console.log('%cDr Alexandra Mallah — site v5','color:#8a6d3b;font-weight:bold');
+  console.log('%cDr Alexandra Mallah — site v6','color:#8a6d3b;font-weight:bold');
   function showView(v){
     document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id==='view-'+v));
     document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('active', a.getAttribute('data-view')===v));
