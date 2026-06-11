@@ -83,7 +83,7 @@
   .home-blob{position:absolute;top:-120px;right:-90px;width:380px;height:380px;border-radius:50%;
     background:radial-gradient(circle at 35% 35%,#f1e6d3,#e0cdab);opacity:.55;z-index:0;pointer-events:none}
   .home-inner{position:relative;z-index:1;max-width:720px}
-  .home-inner p{text-align:justify;hyphens:auto}
+  .home-inner p, .card p, .lede, .findings li{text-align:justify;hyphens:auto}
   .lede{font-size:19px;color:var(--ink-soft)}
   .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
   .tag{font-size:12.5px;letter-spacing:.03em;color:var(--gold);background:#f1e8d6;
@@ -149,7 +149,7 @@
     .burger{display:block}
     .lang-btn{margin-left:auto}
     .view{padding:48px 0}
-    .home-inner p{text-align:left;hyphens:none}
+    .home-inner p, .card p, .lede, .findings li{text-align:left;hyphens:none}
   }
 </style>
 </head>
@@ -417,9 +417,10 @@
   </div>
 </section>
 
-<footer>© 2026 Alexandra Mallah · <span style="opacity:.6">v4</span></footer>
+<footer>© 2026 Alexandra Mallah</footer>
 
 <script>
+  console.log('%cDr Alexandra Mallah — site v5','color:#8a6d3b;font-weight:bold');
   function showView(v){
     document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id==='view-'+v));
     document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('active', a.getAttribute('data-view')===v));
