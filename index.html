@@ -36,7 +36,7 @@
 }
 </script>
 <script>
-  var BUILD = 17;
+  var BUILD = 18;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -132,16 +132,18 @@
 
   /* Gallery */
   .gallery-note{font-size:14px;color:var(--ink-faint);margin:-6px 0 26px;display:flex;align-items:center;gap:8px}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
   #p-docs .group{margin-bottom:30px}
   #p-docs .group h3{margin-bottom:14px}
-  .doc{position:relative;aspect-ratio:3/4;border-radius:10px;border:1px solid var(--line);
-    background:linear-gradient(160deg,#f3ebda,#e9ddc4);overflow:hidden;display:flex;align-items:flex-end;
-    user-select:none;-webkit-user-select:none;transition:.25s}
-  .doc:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(138,109,59,.14)}
-  .doc span{font-family:var(--serif);font-size:18px;color:var(--ink);padding:16px 18px;
-    background:linear-gradient(transparent,rgba(255,253,248,.92));width:100%}
-  .doc-ph{position:absolute;top:18px;left:18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft)}
+  .doc{position:relative;aspect-ratio:3/2;border-radius:10px;border:1px solid var(--line);
+    background:#e9ddc4;overflow:hidden;margin:0;user-select:none;-webkit-user-select:none}
+  .doc img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none}
+  .doc figcaption{position:absolute;left:0;right:0;bottom:0;font-size:12.5px;line-height:1.45;color:var(--ink);
+    padding:28px 14px 11px;background:linear-gradient(transparent,rgba(255,253,248,.94))}
+  .doc-ph{display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold-soft);
+    font-family:var(--serif);font-size:17px;font-style:italic}
+  .thesis-banner{width:100%;height:230px;object-fit:cover;object-position:center 42%;border-radius:14px;
+    border:1px solid var(--line);margin-bottom:24px;display:block;user-select:none;-webkit-user-drag:none}
 
   /* Lists */
   .group{margin-bottom:14px}
@@ -291,6 +293,7 @@
     </div>
 
     <div class="panel" id="p-thesis">
+      <img class="thesis-banner" src="images/banniere-memorial.jpg" loading="lazy" draggable="false" oncontextmenu="return false" alt="Mur de noms du mémorial des victimes de féminicides, Paris">
       <div class="card">
         <p class="meta"><span class="en">PhD in Geography · EHESS & UMR Géographie-cités · 2025</span><span class="fr">Doctorat de géographie · EHESS & UMR Géographie-cités · 2025</span></p>
         <h3><em>Géographie de l'invisible : les territoires de la mémoire des femmes</em></h3>
@@ -324,16 +327,17 @@
       <div class="group">
         <h3><span class="en">From my PhD thesis</span><span class="fr">Issus de ma thèse</span></h3>
         <div class="gallery" oncontextmenu="return false">
-          <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">Map · feminine street names in Paris</span><span class="fr">Carte · odonymes féminins à Paris</span></span></div>
-          <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">Spatial analysis · feminist collages</span><span class="fr">Analyse spatiale · collages féministes</span></span></div>
-          <div class="doc"><span class="doc-ph">Image</span><span><span class="en">Conference poster</span><span class="fr">Poster de colloque</span></span></div>
+          <figure class="doc"><img src="images/memorial-noms.jpg" loading="lazy" draggable="false" alt="Collage participatif des noms de victimes de féminicides, Paris"><figcaption><span class="en">Participatory collage: adding the names of femicide victims, Paris.</span><span class="fr">Collage participatif : ajout des noms de victimes de féminicides, Paris.</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-trans.jpg" loading="lazy" draggable="false" alt="Mémorial des personnes trans décédées, Paris, 2023"><figcaption><span class="en">Memorial to trans people who died, Paris (2023).</span><span class="fr">Mémorial des personnes trans décédées, Paris (2023).</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-rose.jpg" loading="lazy" draggable="false" alt="Rose déposée sur le mur de collages, Paris"><figcaption><span class="en">A rose left on the collage wall, Paris.</span><span class="fr">Rose déposée sur le mur de collages, Paris.</span></figcaption></figure>
+          <figure class="doc"><img src="images/memorial-bougies.jpg" loading="lazy" draggable="false" alt="Bougies au pied du mémorial, Paris"><figcaption><span class="en">Candles at the foot of the memorial, Paris.</span><span class="fr">Bougies au pied du mémorial, Paris.</span></figcaption></figure>
         </div>
       </div>
 
       <div class="group">
         <h3><span class="en">Postdoc — RITMEA project</span><span class="fr">Postdoc — projet RITMEA</span></h3>
         <div class="gallery" oncontextmenu="return false">
-          <div class="doc"><span class="doc-ph">…</span><span><span class="en">To be added…</span><span class="fr">À venir…</span></span></div>
+          <figure class="doc"><div class="doc-ph"><span class="en">To be added…</span><span class="fr">À venir…</span></div></figure>
         </div>
       </div>
     </div>
@@ -544,7 +548,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v17</div>
+<div class="ver" id="ver">v18</div>
 
 <script>
   var _reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
