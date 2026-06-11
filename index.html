@@ -37,7 +37,7 @@
 }
 </script>
 <script>
-  var BUILD = 31;
+  var BUILD = 32;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -136,14 +136,19 @@
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
   #p-docs .group{margin-bottom:30px}
   #p-docs .group h3{margin-bottom:14px}
-  .doc{position:relative;aspect-ratio:3/2;border-radius:10px;border:1px solid var(--line);
-    background:#e9ddc4;overflow:hidden;margin:0;user-select:none;-webkit-user-select:none}
-  .doc img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none}
-  .doc figcaption{position:absolute;left:0;right:0;bottom:0;font-size:12.5px;line-height:1.45;color:var(--ink);
-    padding:30px 14px 11px;background:linear-gradient(transparent,rgba(255,253,248,.94))}
-  .doc .credit{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:2px;letter-spacing:.02em}
-  .doc-ph{display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold-soft);
+  .doc{position:relative;margin:0;user-select:none;-webkit-user-select:none}
+  .doc img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:10px;
+    border:1px solid var(--line);-webkit-user-drag:none}
+  .doc figcaption{padding:9px 2px 2px;font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+  .doc .credit{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:1px;letter-spacing:.02em}
+  .doc-ph{aspect-ratio:3/2;border-radius:10px;border:1px solid var(--line);background:#f1e8d6;
+    display:flex;align-items:center;justify-content:center;color:var(--gold-soft);
     font-family:var(--serif);font-size:16px;font-style:italic;text-align:center;padding:10px}
+  .schema{margin:0;user-select:none;-webkit-user-select:none}
+  .schema img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);
+    background:#fff;cursor:zoom-in;-webkit-user-drag:none}
+  .schema figcaption{padding:8px 2px 2px;font-size:13.5px;color:var(--ink);font-family:var(--serif)}
+  .schema .credit{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:1px;font-family:var(--sans);letter-spacing:.02em}
   .doc-section{margin-bottom:40px}
   .doc-section > h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
   .doc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
@@ -152,7 +157,7 @@
   .doc-scroll::-webkit-scrollbar{width:6px}
   .doc-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
   .doc-scroll::-webkit-scrollbar-track{background:transparent}
-  .doc-scroll .doc{width:100%;flex:0 0 auto}
+  .doc-scroll .doc, .doc-scroll .schema{width:100%;flex:0 0 auto}
   .thesis-banner{width:100%;height:230px;object-fit:cover;object-position:center 42%;border-radius:14px;
     border:1px solid var(--line);margin-bottom:24px;display:block;user-select:none;-webkit-user-drag:none}
   .lightbox{position:fixed;inset:0;background:rgba(45,34,26,.94);display:none;align-items:center;justify-content:center;
@@ -367,7 +372,13 @@
           <div class="doc-col">
             <h4><span class="en">Diagrams &amp; charts</span><span class="fr">Graphiques &amp; schémas</span></h4>
             <div class="doc-scroll">
-              <figure class="doc"><div class="doc-ph"><span class="en">To be added…</span><span class="fr">À venir…</span></div></figure>
+              <figure class="schema"><img src="images/schema-rue.png" loading="lazy" draggable="false" alt="Schéma typologique d'une rue parisienne"><figcaption>Rue<span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-avenue.png" loading="lazy" draggable="false" alt="Schéma typologique d'une avenue parisienne"><figcaption>Avenue<span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-boulevard.png" loading="lazy" draggable="false" alt="Schéma typologique d'un boulevard parisien"><figcaption>Boulevard<span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-promenade.png" loading="lazy" draggable="false" alt="Schéma typologique d'une promenade parisienne"><figcaption>Promenade<span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-allee.png" loading="lazy" draggable="false" alt="Schéma typologique d'une allée parisienne"><figcaption>Allée<span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-passage.png" loading="lazy" draggable="false" alt="Schéma typologique d'un passage parisien"><figcaption>Passage<span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-cite-villa.png" loading="lazy" draggable="false" alt="Schéma typologique d'une cité ou villa parisienne"><figcaption>Cité et villa<span class="credit">© Alexandra Mallah</span></figcaption></figure>
             </div>
           </div>
         </div>
@@ -602,7 +613,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v31</div>
+<div class="ver" id="ver">v32</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><img id="lightbox-img" src="" alt="" draggable="false"></div>
 
@@ -654,7 +665,7 @@
   (function(){
     var lb=document.getElementById('lightbox'), lbi=document.getElementById('lightbox-img');
     if(!lb||!lbi) return;
-    document.querySelectorAll('.doc img, .thesis-banner').forEach(function(img){
+    document.querySelectorAll('.doc img, .schema img, .thesis-banner').forEach(function(img){
       img.style.cursor='zoom-in';
       img.addEventListener('click', function(){ lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||''; lb.classList.add('open'); });
     });
