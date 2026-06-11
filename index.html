@@ -23,6 +23,11 @@
   },
   "alumniOf": "École des Hautes Études en Sciences Sociales (EHESS)",
   "email": "mailto:alexandra.mallah@parisgeo.cnrs.fr",
+  "url": "https://alexandramllh.github.io/",
+  "sameAs": [
+    "https://cv.hal.science/alexandra-mallah",
+    "https://scholar.google.com/citations?user=BSHcSm0AAAAJ&hl=fr"
+  ],
   "knowsAbout": ["Geography", "Gender studies", "Urban memory", "Toponymy", "Mobilities", "GIS"],
   "knowsLanguage": ["fr", "en", "es"]
 }
@@ -90,13 +95,9 @@
   em{font-style:italic}
 
   /* ---------- Hero ---------- */
-  .hero{padding-top:86px}
-  .hero-grid{display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:start}
-  .portrait{width:200px;height:200px;border-radius:50%;
-    background:linear-gradient(135deg,#efe3cf,#e3d2b4);
-    display:flex;align-items:center;justify-content:center;
-    font-family:var(--serif);font-size:58px;color:#fff;font-weight:500;
-    border:1px solid var(--line);box-shadow:0 10px 30px rgba(138,109,59,.12)}
+  .hero{padding-top:96px}
+  .hero h1{font-size:clamp(38px,6vw,60px)}
+  .hero-grid{max-width:760px}
   .lede{font-size:19px;color:var(--ink-soft)}
   .hero p{font-size:17.5px}
   .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
@@ -170,8 +171,6 @@
     .menu a{padding:11px 0;width:100%;border-bottom:1px solid var(--line-soft)}
     .burger{display:block}
     .lang-btn{margin-left:auto}
-    .hero-grid{grid-template-columns:1fr;gap:30px}
-    .portrait{order:-1;width:128px;height:128px;font-size:40px}
     section{padding:54px 0}
   }
 </style>
@@ -220,7 +219,6 @@
           <span class="tag">GIS · QGIS</span>
         </div>
       </div>
-      <div class="portrait" aria-label="Alexandra Mallah">AM</div>
     </div>
   </div>
 </section>
@@ -301,10 +299,10 @@
       <h3><span class="en">Peer-reviewed articles</span><span class="fr">Articles dans une revue à comité de lecture</span></h3>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">« Présentes mais invisibles : les femmes dans la toponymie parisienne »</p>
-        <p class="src"><em>Annales de Géographie</em>, n°764 (4), p. 76–101.</p></div></div>
+        <p class="src"><em>Annales de Géographie</em>, n°764 (4), p. 76–101 · <a href="https://shs.cairn.info/revue-annales-de-geographie-2025-4-page-76?lang=fr&amp;tab=resume" target="_blank" rel="noopener"><span class="en">read online</span><span class="fr">lire en ligne</span></a></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">« Les collages contre les féminicides : le signe de l'appropriation de l'espace public »</p>
-        <p class="src"><em>Mosaïque</em>, n°21.</p></div></div>
+        <p class="src"><em>Mosaïque</em>, n°21 · <a href="https://www.peren-revues.fr/mosaique/2588" target="_blank" rel="noopener"><span class="en">read online</span><span class="fr">lire en ligne</span></a></p></div></div>
     </div>
 
     <div class="group">
@@ -425,18 +423,13 @@
     </p>
     <div class="contact-links">
       <a href="mailto:alexandra.mallah@parisgeo.cnrs.fr">✉ alexandra.mallah@parisgeo.cnrs.fr</a>
-      <a href="#" data-todo="orcid">ORCID</a>
-      <a href="#" data-todo="hal">HAL</a>
-      <a href="#" data-todo="academia">Academia</a>
+      <a href="https://cv.hal.science/alexandra-mallah" target="_blank" rel="noopener">HAL</a>
+      <a href="https://scholar.google.com/citations?user=BSHcSm0AAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a>
     </div>
-    <p class="note">
-      <span class="en">ORCID / HAL / Academia links to be added.</span>
-      <span class="fr">Liens ORCID / HAL / Academia à compléter.</span>
-    </p>
   </div>
 </section>
 
-<footer>© 2026 Alexandra Mallah · <span style="opacity:.6">v1</span></footer>
+<footer>© 2026 Alexandra Mallah · <span style="opacity:.6">v2</span></footer>
 
 <script>
   function toggleLang(){
