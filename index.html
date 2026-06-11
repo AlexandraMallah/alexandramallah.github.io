@@ -36,7 +36,7 @@
 }
 </script>
 <script>
-  var BUILD = 11;
+  var BUILD = 12;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -153,6 +153,9 @@
   .entry .src{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.4}
   .online{font-size:12px;letter-spacing:.02em;color:var(--gold);white-space:nowrap}
   .online:hover{text-decoration:underline}
+  .entry.forthcoming{opacity:.55}
+  .status{display:inline-block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);
+    border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-left:8px;vertical-align:middle}
   .outlet{color:var(--gold);font-weight:500}
 
   /* Contact */
@@ -323,6 +326,9 @@
 
     <div class="group">
       <h3><span class="en">Peer-reviewed articles</span><span class="fr">Articles dans une revue à comité de lecture</span></h3>
+      <div class="entry forthcoming"><div class="yr">2027</div><div>
+        <p class="t">« Le Panthéon sous tension : quand le matrimoine fait vaciller les grands hommes » <span class="status"><span class="en">Forthcoming</span><span class="fr">À paraître</span></span></p>
+        <p class="src"><em>Nouvelles questions féministes</em>, vol. 46, n°1 · <span class="en">accepted at first review.</span><span class="fr">article accepté en première évaluation.</span></p></div></div>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">« Présentes mais invisibles : les femmes dans la toponymie parisienne »</p>
         <p class="src"><em>Annales de Géographie</em>, n°764 (4), p. 76–101 · <a class="online" href="https://shs.cairn.info/revue-annales-de-geographie-2025-4-page-76?lang=fr&amp;tab=resume" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
@@ -358,7 +364,7 @@
       <h3><span class="en">Outreach</span><span class="fr">Vulgarisation</span></h3>
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t"><span class="en">Guest contribution to the MOOC <em>Dénommer le monde : la politique des toponymes</em></span><span class="fr">Contribution au MOOC <em>Dénommer le monde : la politique des toponymes</em></span></p>
-        <p class="src"><span class="en">Module “Dominations et toponymie : postcolonialité et genre”, dir. Frédéric Giraut — UNESCO Chair in inclusive toponymy, University of Geneva. Segments: « Théories du genre dans l'espace public », « Les odonymes féminins dans le monde », « Un cas d'étude, la ville de Paris ».</span><span class="fr">Module « Dominations et toponymie : postcolonialité et genre », sous la direction de Frédéric Giraut — Chaire UNESCO en toponymie inclusive, Université de Genève. Capsules : « Théories du genre dans l'espace public », « Les odonymes féminins dans le monde », « Un cas d'étude, la ville de Paris ».</span></p></div></div>
+        <p class="src"><span class="en">Module “Dominations et toponymie : postcolonialité et genre”, dir. Frédéric Giraut — UNESCO Chair in inclusive toponymy, University of Geneva. Segments: « Théories du genre dans l'espace public », « Les odonymes féminins dans le monde », « Un cas d'étude, la ville de Paris ».</span><span class="fr">Module « Dominations et toponymie : postcolonialité et genre », sous la direction de Frédéric Giraut — Chaire UNESCO en toponymie inclusive, Université de Genève. Capsules : « Théories du genre dans l'espace public », « Les odonymes féminins dans le monde », « Un cas d'étude, la ville de Paris ».</span> · <a class="online" href="https://www.unige.ch/sciences-societe/geo/etudes/mooc-denommer-le-monde-la-politique-des-toponymes" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">« Raconte-moi ta thèse #13 — Ce que le matrimoine fait au patrimoine »</p>
         <p class="src">EHESS Alumni.</p></div></div>
@@ -445,8 +451,8 @@
     <div class="group">
       <h3><span class="en">Public engagement</span><span class="fr">Médiation scientifique et culturelle</span></h3>
       <div class="entry"><div class="yr">2026</div><div>
-        <p class="t"><span class="en">Educational podcast project with secondary-school pupils</span><span class="fr">Projet pédagogique de production de podcast avec des collégien·nes</span></p>
-        <p class="src"><span class="en">Collège Antoine Laurent de Lavoisier, with France Culture & Radio Campus Paris — research careers and the matrimony, Pantin.</span><span class="fr">Collège Antoine Laurent de Lavoisier, en partenariat avec France Culture & Radio Campus Paris — métiers de la recherche et enjeux du matrimoine, Pantin.</span></p></div></div>
+        <p class="t"><span class="en">Talk within a school podcast project</span><span class="fr">Intervention dans un projet pédagogique de podcast</span></p>
+        <p class="src"><span class="en">Collège Antoine Laurent de Lavoisier (France Culture & Radio Campus Paris) — talk on research careers and the matrimony; the podcast was produced by the pupils. Pantin.</span><span class="fr">Collège Antoine Laurent de Lavoisier (France Culture & Radio Campus Paris) — présentation des métiers de la recherche et du matrimoine ; le podcast a été réalisé par les élèves. Pantin.</span></p></div></div>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t"><span class="en">Round table “Archives and traces: the difficulty of building a matrimony”</span><span class="fr">Table ronde « Archives et traces : de la difficulté de constituer un matrimoine »</span></p>
         <p class="src">Philharmonie de Paris.</p></div></div>
@@ -509,7 +515,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v11</div>
+<div class="ver" id="ver">v12</div>
 
 <script>
   var _reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
