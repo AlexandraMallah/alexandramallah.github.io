@@ -36,7 +36,7 @@
 }
 </script>
 <script>
-  var BUILD = 18;
+  var BUILD = 19;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -144,6 +144,13 @@
     font-family:var(--serif);font-size:17px;font-style:italic}
   .thesis-banner{width:100%;height:230px;object-fit:cover;object-position:center 42%;border-radius:14px;
     border:1px solid var(--line);margin-bottom:24px;display:block;user-select:none;-webkit-user-drag:none}
+  .lightbox{position:fixed;inset:0;background:rgba(45,34,26,.94);display:none;align-items:center;justify-content:center;
+    z-index:200;padding:28px;cursor:zoom-out}
+  .lightbox.open{display:flex;animation:fade .25s ease}
+  .lightbox img{max-width:96%;max-height:94%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.45);
+    -webkit-user-drag:none;user-select:none}
+  .lb-close{position:absolute;top:16px;right:24px;color:#fff;font-size:32px;line-height:1;opacity:.8;cursor:pointer}
+  .lb-close:hover{opacity:1}
 
   /* Lists */
   .group{margin-bottom:14px}
@@ -354,7 +361,7 @@
       <h3><span class="en">PhD thesis</span><span class="fr">Thèse de doctorat</span></h3>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t"><em>Géographie de l'invisible : les territoires de la mémoire des femmes</em></p>
-        <p class="src"><span class="en">PhD in Geography, EHESS & UMR Géographie-cités · Supervised by Nicolas Verdier · Defended 14 November 2025.</span><span class="fr">Thèse de doctorat en géographie, EHESS & UMR Géographie-cités · Direction : Nicolas Verdier · Soutenue le 14 novembre 2025.</span></p></div></div>
+        <p class="src"><span class="en">PhD in Geography, EHESS & UMR Géographie-cités · Supervised by Nicolas Verdier · Defended 14 November 2025.</span><span class="fr">Thèse de doctorat en géographie, EHESS & UMR Géographie-cités · Direction : Nicolas Verdier · Soutenue le 14 novembre 2025.</span> · <a class="online" href="https://theses.fr/2025EHES0116" target="_blank" rel="noopener"><span class="en">View online</span><span class="fr">Voir en ligne</span> <span aria-hidden="true">↗</span></a></p></div></div>
     </div>
 
     <div class="group">
@@ -548,7 +555,9 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v18</div>
+<div class="ver" id="ver">v19</div>
+
+<div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><img id="lightbox-img" src="" alt="" draggable="false"></div>
 
 <script>
   var _reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -594,6 +603,16 @@
       var x=((e.clientX-r.left)/r.width-0.5), y=((e.clientY-r.top)/r.height-0.5);
       bl.style.transform='translate('+(x*34).toFixed(1)+'px,'+(y*34).toFixed(1)+'px)';
     });
+  })();
+  (function(){
+    var lb=document.getElementById('lightbox'), lbi=document.getElementById('lightbox-img');
+    if(!lb||!lbi) return;
+    document.querySelectorAll('.gallery .doc img, .thesis-banner').forEach(function(img){
+      img.style.cursor='zoom-in';
+      img.addEventListener('click', function(){ lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||''; lb.classList.add('open'); });
+    });
+    lb.addEventListener('click', function(){ lb.classList.remove('open'); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
   })();
 </script>
 </body>
