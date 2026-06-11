@@ -36,7 +36,7 @@
 }
 </script>
 <script>
-  var BUILD = 7;
+  var BUILD = 8;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -130,6 +130,8 @@
   /* Gallery */
   .gallery-note{font-size:14px;color:var(--ink-faint);margin:-6px 0 26px;display:flex;align-items:center;gap:8px}
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+  #p-docs .group{margin-bottom:30px}
+  #p-docs .group h3{margin-bottom:14px}
   .doc{position:relative;aspect-ratio:3/4;border-radius:10px;border:1px solid var(--line);
     background:linear-gradient(160deg,#f3ebda,#e9ddc4);overflow:hidden;display:flex;align-items:flex-end;
     user-select:none;-webkit-user-select:none;transition:.25s}
@@ -282,11 +284,21 @@
 
     <div class="panel" id="p-docs">
       <p class="gallery-note">🔒 <span class="en">A selection of my maps, visualisations and documents — viewing only.</span><span class="fr">Une sélection de mes cartes, visualisations et documents — consultation uniquement.</span></p>
-      <div class="gallery" oncontextmenu="return false">
-        <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">Map · feminine street names in Paris</span><span class="fr">Carte · odonymes féminins à Paris</span></span></div>
-        <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">Spatial analysis · feminist collages</span><span class="fr">Analyse spatiale · collages féministes</span></span></div>
-        <div class="doc"><span class="doc-ph">Image</span><span><span class="en">Conference poster</span><span class="fr">Poster de colloque</span></span></div>
-        <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">To be added…</span><span class="fr">À compléter…</span></span></div>
+
+      <div class="group">
+        <h3><span class="en">From my PhD thesis</span><span class="fr">Issus de ma thèse</span></h3>
+        <div class="gallery" oncontextmenu="return false">
+          <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">Map · feminine street names in Paris</span><span class="fr">Carte · odonymes féminins à Paris</span></span></div>
+          <div class="doc"><span class="doc-ph">PDF</span><span><span class="en">Spatial analysis · feminist collages</span><span class="fr">Analyse spatiale · collages féministes</span></span></div>
+          <div class="doc"><span class="doc-ph">Image</span><span><span class="en">Conference poster</span><span class="fr">Poster de colloque</span></span></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3><span class="en">Postdoc — RITMEA project</span><span class="fr">Postdoc — projet RITMEA</span></h3>
+        <div class="gallery" oncontextmenu="return false">
+          <div class="doc"><span class="doc-ph">…</span><span><span class="en">To be added…</span><span class="fr">À venir…</span></span></div>
+        </div>
       </div>
     </div>
   </div>
