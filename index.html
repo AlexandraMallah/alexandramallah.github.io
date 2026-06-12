@@ -37,7 +37,7 @@
 }
 </script>
 <script>
-  var BUILD = 35;
+  var BUILD = 36;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -153,7 +153,7 @@
   .schema .credit{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:1px;font-family:var(--sans);letter-spacing:.02em}
   .doc-section{margin-bottom:40px}
   .doc-section > h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-  .doc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .doc-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
   .doc-col > h4{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;font-weight:500}
   .doc-scroll{max-height:560px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:6px}
   .doc-scroll::-webkit-scrollbar{width:6px}
@@ -165,8 +165,12 @@
   .lightbox{position:fixed;inset:0;background:rgba(45,34,26,.94);display:none;align-items:center;justify-content:center;
     z-index:200;padding:28px;cursor:zoom-out}
   .lightbox.open{display:flex;animation:fade .25s ease}
-  .lightbox img{max-width:94%;max-height:92%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.45);
-    background:#f7f2ea;padding:14px;box-sizing:border-box;-webkit-user-drag:none;user-select:none}
+  .lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:94%}
+  .lb-fig img{max-width:100%;max-height:80vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.45);
+    background:none;object-fit:contain;-webkit-user-drag:none;user-select:none}
+  .lightbox.sch .lb-fig img{background:#f7f2ea;padding:18px;box-sizing:border-box}
+  .lb-cap{font-family:var(--serif);font-size:15px;color:#f3ece0;text-align:center;max-width:600px;line-height:1.4}
+  .lb-cap .credit{display:block;font-family:var(--sans);font-size:11.5px;color:#bcae99;margin-top:3px}
   .lb-close{position:absolute;top:16px;right:24px;color:#fff;font-size:32px;line-height:1;opacity:.8;cursor:pointer}
   .lb-close:hover{opacity:1}
 
@@ -353,11 +357,11 @@
           <div class="doc-col">
             <h4><span class="en">Photographs</span><span class="fr">Photographies</span></h4>
             <div class="doc-scroll">
-              <figure class="doc"><img src="images/memorial-mur.jpg" loading="lazy" draggable="false" alt="Mur de noms du mémorial des victimes de féminicides, rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-noms.jpg" loading="lazy" draggable="false" alt="Ajout de noms sur le mémorial, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-anonymes.jpg" loading="lazy" draggable="false" alt="Mémorial, noms et anonymes, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-rose.jpg" loading="lazy" draggable="false" alt="Rose blanche déposée sur le mémorial, rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-sang.jpg" loading="lazy" draggable="false" alt="Collage « Féminicides : leur sang sur vos murs », Paris"><figcaption><span class="en">Paris · January 2023</span><span class="fr">Paris · janvier 2023</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="doc"><img src="images/memorial-mur.jpg" loading="lazy" draggable="false" alt="Mur de noms du mémorial des victimes de féminicides, rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure>
+              <figure class="doc"><img src="images/memorial-noms.jpg" loading="lazy" draggable="false" alt="Ajout de noms sur le mémorial, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure>
+              <figure class="doc"><img src="images/memorial-anonymes.jpg" loading="lazy" draggable="false" alt="Mémorial, noms et anonymes, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure>
+              <figure class="doc"><img src="images/memorial-rose.jpg" loading="lazy" draggable="false" alt="Rose blanche déposée sur le mémorial, rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure>
+              <figure class="doc"><img src="images/memorial-sang.jpg" loading="lazy" draggable="false" alt="Collage « Féminicides : leur sang sur vos murs », Paris"><figcaption><span class="en">Paris · January 2023</span><span class="fr">Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure>
             </div>
           </div>
           <div class="doc-col">
@@ -369,14 +373,18 @@
           <div class="doc-col">
             <h4><span class="en">Sketches</span><span class="fr">Croquis</span></h4>
             <div class="doc-scroll">
-              <figure class="schema"><img src="images/schema-boulevard.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un boulevard parisien"><figcaption><span class="en">Typical schema of a boulevard</span><span class="fr">Schéma type d'un boulevard</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-avenue.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une avenue parisienne"><figcaption><span class="en">Typical schema of an avenue</span><span class="fr">Schéma type d'une avenue</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-rue.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une rue parisienne"><figcaption><span class="en">Typical schema of a street</span><span class="fr">Schéma type d'une rue</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-promenade.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une promenade parisienne"><figcaption><span class="en">Typical schema of a promenade</span><span class="fr">Schéma type d'une promenade</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-passage.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un passage parisien"><figcaption><span class="en">Typical schema of a passage</span><span class="fr">Schéma type d'un passage</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-cite-villa.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une cité ou villa parisienne"><figcaption><span class="en">Typical schema of a “cité” / “villa”</span><span class="fr">Schéma type d'une cité ou villa</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-allee.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une allée parisienne"><figcaption><span class="en">Typical schema of an allée</span><span class="fr">Schéma type d'une allée</span><span class="credit">© Alexandra Mallah</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-boulevard.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un boulevard parisien"><figcaption><span class="en">Typical schema of a boulevard</span><span class="fr">Schéma type d'un boulevard</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-avenue.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une avenue parisienne"><figcaption><span class="en">Typical schema of an avenue</span><span class="fr">Schéma type d'une avenue</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-rue.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une rue parisienne"><figcaption><span class="en">Typical schema of a street</span><span class="fr">Schéma type d'une rue</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-promenade.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une promenade parisienne"><figcaption><span class="en">Typical schema of a promenade</span><span class="fr">Schéma type d'une promenade</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-passage.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un passage parisien"><figcaption><span class="en">Typical schema of a passage</span><span class="fr">Schéma type d'un passage</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-cite-villa.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une cité ou villa parisienne"><figcaption><span class="en">Typical schema of a “cité” / “villa”</span><span class="fr">Schéma type d'une cité ou villa</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema"><img src="images/schema-allee.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une allée parisienne"><figcaption><span class="en">Typical schema of an allée</span><span class="fr">Schéma type d'une allée</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
             </div>
+          </div>
+          <div class="doc-col">
+            <h4><span class="en">Diagrams &amp; charts</span><span class="fr">Graphiques &amp; schémas</span></h4>
+            <div class="doc-scroll"><figure class="doc"><div class="doc-ph"><span class="en">To be added…</span><span class="fr">À venir…</span></div></figure></div>
           </div>
         </div>
       </div>
@@ -394,6 +402,10 @@
           </div>
           <div class="doc-col">
             <h4><span class="en">Sketches</span><span class="fr">Croquis</span></h4>
+            <div class="doc-scroll"><figure class="doc"><div class="doc-ph"><span class="en">To be added…</span><span class="fr">À venir…</span></div></figure></div>
+          </div>
+          <div class="doc-col">
+            <h4><span class="en">Diagrams &amp; charts</span><span class="fr">Graphiques &amp; schémas</span></h4>
             <div class="doc-scroll"><figure class="doc"><div class="doc-ph"><span class="en">To be added…</span><span class="fr">À venir…</span></div></figure></div>
           </div>
         </div>
@@ -610,9 +622,9 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v35</div>
+<div class="ver" id="ver">v36</div>
 
-<div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><img id="lightbox-img" src="" alt="" draggable="false"></div>
+<div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
 <script>
   var _reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -660,11 +672,17 @@
     });
   })();
   (function(){
-    var lb=document.getElementById('lightbox'), lbi=document.getElementById('lightbox-img');
+    var lb=document.getElementById('lightbox'), lbi=document.getElementById('lightbox-img'), lbc=document.getElementById('lightbox-cap');
     if(!lb||!lbi) return;
     document.querySelectorAll('.doc img, .schema img, .thesis-banner').forEach(function(img){
       img.style.cursor='zoom-in';
-      img.addEventListener('click', function(){ lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||''; lb.classList.add('open'); });
+      img.addEventListener('click', function(){
+        lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||'';
+        var fig=img.closest('figure'); var cap=fig?fig.querySelector('figcaption'):null;
+        if(lbc) lbc.innerHTML = cap ? cap.innerHTML : '';
+        lb.classList.toggle('sch', !!img.closest('.schema'));
+        lb.classList.add('open');
+      });
     });
     lb.addEventListener('click', function(){ lb.classList.remove('open'); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
