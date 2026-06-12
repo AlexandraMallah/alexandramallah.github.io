@@ -37,7 +37,7 @@
 }
 </script>
 <script>
-  var BUILD = 41;
+  var BUILD = 42;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -172,8 +172,14 @@
   .lightbox.sch .lb-fig img{background:#f7f2ea;padding:18px;box-sizing:border-box}
   .lb-cap{font-family:var(--serif);font-size:15px;color:#f3ece0;text-align:center;max-width:600px;line-height:1.4}
   .lb-cap .credit{display:block;font-family:var(--sans);font-size:11.5px;color:#bcae99;margin-top:3px}
-  .lb-close{position:absolute;top:16px;right:24px;color:#fff;font-size:32px;line-height:1;opacity:.8;cursor:pointer}
+  .lb-close{position:absolute;top:16px;right:24px;color:#fff;font-size:32px;line-height:1;opacity:.8;cursor:pointer;z-index:3}
   .lb-close:hover{opacity:1}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:30px;line-height:1;opacity:.65;cursor:pointer;user-select:none;-webkit-user-select:none;z-index:3;
+    width:46px;height:46px;display:none;align-items:center;justify-content:center;border-radius:50%;background:rgba(45,34,26,.45);transition:opacity .2s,background .2s}
+  .lb-nav:hover{opacity:1;background:rgba(45,34,26,.75)}
+  .lightbox.multi .lb-nav{display:flex}
+  .lb-prev{left:20px}.lb-next{right:20px}
+  @media(max-width:560px){.lb-prev{left:8px}.lb-next{right:8px}.lb-nav{width:40px;height:40px;font-size:26px}}
 
   /* Lists */
   .group{margin-bottom:14px}
@@ -640,9 +646,9 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v41</div>
+<div class="ver" id="ver">v42</div>
 
-<div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
+<div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><span class="lb-nav lb-prev" id="lb-prev" role="button" aria-label="Image précédente">‹</span><span class="lb-nav lb-next" id="lb-next" role="button" aria-label="Image suivante">›</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
 <script>
   var _reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -692,18 +698,37 @@
   (function(){
     var lb=document.getElementById('lightbox'), lbi=document.getElementById('lightbox-img'), lbc=document.getElementById('lightbox-cap');
     if(!lb||!lbi) return;
+    var prevBtn=document.getElementById('lb-prev'), nextBtn=document.getElementById('lb-next');
+    var group=[], idx=0;
+    function render(){
+      var img=group[idx]; if(!img) return;
+      lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||'';
+      var fig=img.closest('figure'); var cap=fig?fig.querySelector('figcaption'):null;
+      if(lbc) lbc.innerHTML = cap ? cap.innerHTML : '';
+      lb.classList.toggle('sch', !!img.closest('.schema'));
+    }
+    function step(d){ if(group.length<2) return; idx=(idx+d+group.length)%group.length; render(); }
+    function open(img){
+      var scope=img.closest('.doc-scroll');
+      group = scope ? Array.prototype.slice.call(scope.querySelectorAll('.doc img, .schema img')) : [img];
+      idx=group.indexOf(img); if(idx<0){ group=[img]; idx=0; }
+      lb.classList.toggle('multi', group.length>1);
+      render(); lb.classList.add('open');
+    }
     document.querySelectorAll('.doc img, .schema img, .thesis-banner').forEach(function(img){
       img.style.cursor='zoom-in';
-      img.addEventListener('click', function(){
-        lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||'';
-        var fig=img.closest('figure'); var cap=fig?fig.querySelector('figcaption'):null;
-        if(lbc) lbc.innerHTML = cap ? cap.innerHTML : '';
-        lb.classList.toggle('sch', !!img.closest('.schema'));
-        lb.classList.add('open');
-      });
+      img.addEventListener('click', function(e){ e.stopPropagation(); open(img); });
     });
+    if(prevBtn) prevBtn.addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+    if(nextBtn) nextBtn.addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+    lbi.addEventListener('click', function(e){ e.stopPropagation(); });
     lb.addEventListener('click', function(){ lb.classList.remove('open'); });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
+    document.addEventListener('keydown', function(e){
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') lb.classList.remove('open');
+      else if(e.key==='ArrowLeft') step(-1);
+      else if(e.key==='ArrowRight') step(1);
+    });
   })();
 </script>
 </body>
