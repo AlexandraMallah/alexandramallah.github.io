@@ -37,7 +37,7 @@
 }
 </script>
 <script>
-  var BUILD = 36;
+  var BUILD = 37;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -147,8 +147,9 @@
     font-family:var(--serif);font-size:16px;font-style:italic;text-align:center;padding:10px}
   .schema{margin:0;user-select:none;-webkit-user-select:none}
   .schema img{width:100%;height:auto;display:block;background:transparent;cursor:zoom-in;
-    transition:transform .55s cubic-bezier(.2,.6,.2,1);-webkit-user-drag:none}
-  .schema:hover img{transform:scale(1.045)}
+    border:1px solid var(--gold-soft);border-radius:10px;
+    transition:transform .55s cubic-bezier(.2,.6,.2,1),border-color .3s ease;-webkit-user-drag:none}
+  .schema:hover img{transform:scale(1.045);border-color:var(--gold)}
   .schema figcaption{padding:8px 2px 2px;font-size:13.5px;color:var(--ink);font-family:var(--serif)}
   .schema .credit{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:1px;font-family:var(--sans);letter-spacing:.02em}
   .doc-section{margin-bottom:40px}
@@ -622,7 +623,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v36</div>
+<div class="ver" id="ver">v37</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
