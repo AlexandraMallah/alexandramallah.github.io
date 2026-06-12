@@ -37,7 +37,7 @@
 }
 </script>
 <script>
-  var BUILD = 43;
+  var BUILD = 44;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -150,6 +150,8 @@
     transition:transform .55s cubic-bezier(.2,.6,.2,1);-webkit-user-drag:none}
   .schema:hover img{transform:scale(1.045)}
   .schema.paper img{border:1px solid var(--line);border-radius:8px;background:#fff;padding:9px;box-sizing:border-box}
+  .docs-jump{display:inline-flex;align-items:center;gap:7px;margin-top:22px;padding:11px 22px;border:1px solid var(--gold-soft);border-radius:30px;color:var(--gold);font-family:var(--sans);font-size:14px;letter-spacing:.02em;cursor:pointer;background:transparent;transition:background .25s,color .25s,border-color .25s}
+  .docs-jump:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
   .schema figcaption{padding:8px 2px 2px;font-size:13.5px;color:var(--ink);font-family:var(--serif)}
   .schema .credit{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:1px;font-family:var(--sans);letter-spacing:.02em}
   .doc-section{margin-bottom:40px}
@@ -353,6 +355,9 @@
           <span class="fr">Quatre principaux résultats émergent de cette recherche. Premièrement, la visibilité ne se réduit pas à une propriété intrinsèque d'un signe : elle dépend d'un réseau de facteurs spatiaux (localisation, densité, co-présence), symboliques (charge mémorielle des lieux), graphiques (style, lisibilité), temporels (répétition, effacement), et sociaux (fréquentation, interactions). Deuxièmement, les mémoires féminines et féministes à Paris se déploient de façon fragmentée sur le territoire. Ces deux résultats en révèlent un troisième : les modalités d'inscription de la mémoire féminine à Paris contribuent à rejouer, voire à reconduire, des logiques d'inégalités de genre. À ce titre, la thèse montre que la mémoire des femmes et des minorités de genre reste une mémoire <em>dans</em> la ville, mais peine encore à devenir une mémoire <em>de</em> la ville. Enfin, malgré les limites que nous mettons en évidence quant à la visibilité des écritures mémorielles féminines et féministes, ce travail révèle l'émergence de pratiques mémorielles féministes contestataires qui subvertissent les formes classiques de commémoration. En valorisant d'autres formes de mise en mémoire, elles gagnent à être envisagées sous le terme de <em>matrimoine critique</em>.</span>
         </p>
       </div>
+      <div style="text-align:center">
+        <a class="docs-jump" onclick="goDocs()" role="button" tabindex="0"><span class="en">See the thesis figures &amp; maps</span><span class="fr">Voir les figures &amp; cartes de la thèse</span> <span aria-hidden="true">→</span></a>
+      </div>
     </div>
 
     <div class="panel" id="p-docs">
@@ -374,11 +379,11 @@
           <div class="doc-col">
             <h4><span class="en">Maps</span><span class="fr">Cartes</span></h4>
             <div class="doc-scroll">
-              <figure class="schema paper"><img src="images/carte-voies-feminines.png?v=43" loading="lazy" draggable="false" alt="Carte des voies féminines de Paris selon leur date de baptême"><figcaption><span class="en">Streets named after women, by date of naming · Paris</span><span class="fr">Voies féminines selon leur date de baptême, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/carte-feminicides.png?v=43" loading="lazy" draggable="false" alt="Carte de la géographie des collages contre les féminicides à Paris"><figcaption><span class="en">Geography of anti-femicide collages, 2019–2024 · Paris</span><span class="fr">Géographie des collages contre les féminicides, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/carte-visibilite.png?v=43" loading="lazy" draggable="false" alt="Carte du niveau de visibilité des collages selon leur rue d'implantation"><figcaption><span class="en">Visibility of collages by street where posted · Paris</span><span class="fr">Niveau de visibilité des collages selon leur rue d'implantation, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/carte-syntheses.png?v=43" loading="lazy" draggable="false" alt="Synthèse des géographies des mémoires féminines et féministes à Paris"><figcaption><span class="en">Synthesis of women's and feminist memory geographies · Paris</span><span class="fr">Synthèse des géographies des mémoires féminines et féministes, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/carte-perimetre.png?v=43" loading="lazy" draggable="false" alt="Identification du périmètre englobant les collages produits lors d'une session"><figcaption><span class="en">Perimeter enclosing the collages of a single session</span><span class="fr">Identification du périmètre englobant les collages d'une même session</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/carte-voies-feminines.png?v=44" loading="lazy" draggable="false" alt="Carte des voies féminines de Paris selon leur date de baptême"><figcaption><span class="en">Streets named after women, by date of naming · Paris</span><span class="fr">Voies féminines selon leur date de baptême, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/carte-feminicides.png?v=44" loading="lazy" draggable="false" alt="Carte de la géographie des collages contre les féminicides à Paris"><figcaption><span class="en">Geography of anti-femicide collages, 2019–2024 · Paris</span><span class="fr">Géographie des collages contre les féminicides, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/carte-visibilite.png?v=44" loading="lazy" draggable="false" alt="Carte du niveau de visibilité des collages selon leur rue d'implantation"><figcaption><span class="en">Visibility of collages by street where posted · Paris</span><span class="fr">Niveau de visibilité des collages selon leur rue d'implantation, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/carte-syntheses.png?v=44" loading="lazy" draggable="false" alt="Synthèse des géographies des mémoires féminines et féministes à Paris"><figcaption><span class="en">Synthesis of women's and feminist memory geographies · Paris</span><span class="fr">Synthèse des géographies des mémoires féminines et féministes, à Paris</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/carte-perimetre.png?v=44" loading="lazy" draggable="false" alt="Identification du périmètre englobant les collages produits lors d'une session"><figcaption><span class="en">Perimeter enclosing the collages of a single session</span><span class="fr">Identification du périmètre englobant les collages d'une même session</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
             </div>
           </div>
           <div class="doc-col">
@@ -391,8 +396,8 @@
               <figure class="schema"><img src="images/schema-passage.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un passage parisien"><figcaption><span class="en">Typical schema of a passage</span><span class="fr">Schéma type d'un passage</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
               <figure class="schema"><img src="images/schema-cite-villa.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une cité ou villa parisienne"><figcaption><span class="en">Typical schema of a “cité” / “villa”</span><span class="fr">Schéma type d'une cité ou villa</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
               <figure class="schema"><img src="images/schema-allee.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une allée parisienne"><figcaption><span class="en">Typical schema of an allée</span><span class="fr">Schéma type d'une allée</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/croquis-plaques.png?v=43" loading="lazy" draggable="false" alt="Croquis du positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier"><figcaption><span class="en">Placement of street signs at boulevard Pereire × rue Laugier · Paris</span><span class="fr">Positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier, à Paris</span><span class="credit">© Alexandra Mallah, 2022</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/croquis-publicite.png?v=43" loading="lazy" draggable="false" alt="Analyse de quatre panneaux publicitaires : espace de la page, écriture et hauteur d'affichage"><figcaption><span class="en">Advertising panels: page space, writing and display height</span><span class="fr">Les panneaux publicitaires : espace de la page, écriture et hauteur d'affichage</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/croquis-plaques.png?v=44" loading="lazy" draggable="false" alt="Croquis du positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier"><figcaption><span class="en">Placement of street signs at boulevard Pereire × rue Laugier · Paris</span><span class="fr">Positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier, à Paris</span><span class="credit">© Alexandra Mallah, 2022</span></figcaption></figure>
+              <figure class="schema paper"><img src="images/croquis-publicite.png?v=44" loading="lazy" draggable="false" alt="Analyse de quatre panneaux publicitaires : espace de la page, écriture et hauteur d'affichage"><figcaption><span class="en">Advertising panels: page space, writing and display height</span><span class="fr">Les panneaux publicitaires : espace de la page, écriture et hauteur d'affichage</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
               <figure class="schema paper"><img src="images/croquis-strategies.png?v=41" loading="lazy" draggable="false" alt="Croquis de deux stratégies d'affichage des collages et de leur incidence sur la visibilité"><figcaption><span class="en">Two strategies for posting collages and their effect on visibility</span><span class="fr">Deux stratégies d'affichage des collages et leur incidence sur la visibilité</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure>
             </div>
           </div>
@@ -645,7 +650,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v43</div>
+<div class="ver" id="ver">v44</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><span class="lb-nav lb-prev" id="lb-prev" role="button" aria-label="Image précédente">‹</span><span class="lb-nav lb-next" id="lb-next" role="button" aria-label="Image suivante">›</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
@@ -681,6 +686,11 @@
     el.closest('.view').querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
     el.classList.add('active'); document.getElementById(id).classList.add('active');
     applyReveal(document.getElementById(id));
+  }
+  function goDocs(){
+    var t=document.querySelectorAll('.tabs .tab')[2];
+    if(t) showTab(t,'p-docs');
+    var v=document.getElementById('view-research'); if(v) v.scrollIntoView({behavior:'smooth',block:'start'});
   }
   function closeMenu(){document.getElementById('menu').classList.remove('open');}
   applyReveal(document.getElementById('view-home'));
