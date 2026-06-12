@@ -37,7 +37,7 @@
 }
 </script>
 <script>
-  var BUILD = 47;
+  var BUILD = 48;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -379,7 +379,7 @@
           <div class="doc-col">
             <h4><span class="en">Maps</span><span class="fr">Cartes</span></h4>
             <div class="doc-scroll">
-              <figure class="schema paper"><img src="images/carte-voies-feminines.png?v=44" loading="lazy" draggable="false" alt="Carte des voies féminines de Paris selon leur date de baptême"><figcaption><span class="en">Streets named after women, by date of naming · Paris</span><span class="fr">Voies féminines selon leur date de baptême, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Paris Open Data — City of Paris, 2018</span><span class="fr">Source : Paris Open Data — Ville de Paris, 2018</span></span></figcaption></figure>
+              <figure class="schema paper"><img class="fr" src="images/carte-voies-feminines.png?v=48" loading="lazy" draggable="false" alt="Carte des voies féminines de Paris selon leur date de baptême"><img class="en" src="images/carte-voies-feminines-en.png?v=48" loading="lazy" draggable="false" alt="Map of streets named after women in Paris, by date of naming"><figcaption><span class="en">Streets named after women, by date of naming · Paris</span><span class="fr">Voies féminines selon leur date de baptême, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Paris Open Data — City of Paris, 2018</span><span class="fr">Source : Paris Open Data — Ville de Paris, 2018</span></span></figcaption></figure>
               <figure class="schema paper"><img src="images/carte-feminicides.png?v=44" loading="lazy" draggable="false" alt="Carte de la géographie des collages contre les féminicides à Paris"><figcaption><span class="en">Geography of anti-femicide collages, 2019–2024 · Paris</span><span class="fr">Géographie des collages contre les féminicides, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: fieldwork data, A. Mallah</span><span class="fr">Source : données de terrain, A. Mallah</span></span></figcaption></figure>
               <figure class="schema paper"><img src="images/carte-visibilite.png?v=44" loading="lazy" draggable="false" alt="Carte du niveau de visibilité des collages selon leur rue d'implantation"><figcaption><span class="en">Visibility of collages by street where posted · Paris</span><span class="fr">Niveau de visibilité des collages selon leur rue d'implantation, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: APUR, 2024</span><span class="fr">Source : APUR, 2024</span></span></figcaption></figure>
               <figure class="schema paper"><img src="images/carte-syntheses.png?v=45" loading="lazy" draggable="false" alt="Synthèse des géographies des mémoires féminines et féministes à Paris"><figcaption><span class="en">Synthesis of women's and feminist memory geographies · Paris</span><span class="fr">Synthèse des géographies des mémoires féminines et féministes, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Paris Open Data — City of Paris, 2018</span><span class="fr">Source : Paris Open Data — Ville de Paris, 2018</span></span></figcaption></figure>
@@ -650,7 +650,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v47</div>
+<div class="ver" id="ver">v48</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><span class="lb-nav lb-prev" id="lb-prev" role="button" aria-label="Image précédente">‹</span><span class="lb-nav lb-next" id="lb-next" role="button" aria-label="Image suivante">›</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
@@ -719,7 +719,7 @@
     function step(d){ if(group.length<2) return; idx=(idx+d+group.length)%group.length; render(); }
     function open(img){
       var scope=img.closest('.doc-scroll');
-      group = scope ? Array.prototype.slice.call(scope.querySelectorAll('.doc img, .schema img')) : [img];
+      group = scope ? Array.prototype.slice.call(scope.querySelectorAll('.doc img, .schema img')).filter(function(i){return i===img||i.offsetParent!==null;}) : [img];
       idx=group.indexOf(img); if(idx<0){ group=[img]; idx=0; }
       lb.classList.toggle('multi', group.length>1);
       render(); lb.classList.add('open');
