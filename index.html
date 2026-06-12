@@ -42,7 +42,7 @@
 }
 </script>
 <script>
-  var BUILD = 55;
+  var BUILD = 56;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -155,12 +155,9 @@
     transition:transform .55s cubic-bezier(.2,.6,.2,1);-webkit-user-drag:none}
   .schema:hover img{transform:scale(1.045)}
   .schema.paper img{border:1px solid #fff;border-radius:8px;background:#fff;padding:9px;box-sizing:border-box}
-  .home-grid{display:flex;gap:44px;align-items:flex-start;position:relative;z-index:1}
-  .home-grid .home-inner{flex:1;min-width:0;max-width:none}
-  .home-photo{flex:0 0 250px;margin:64px 0 0;text-align:center}
-  .home-photo img{width:100%;height:auto;border-radius:14px;display:block;cursor:zoom-in;box-shadow:0 14px 38px rgba(61,52,42,.20);-webkit-user-drag:none}
-  .home-photo figcaption{margin-top:9px;font-size:11.5px;color:var(--ink-soft);font-family:var(--sans);letter-spacing:.02em}
-  @media(max-width:760px){.home-grid{flex-direction:column;gap:26px}.home-photo{flex:0 0 auto;max-width:300px;margin:8px auto 0}}
+  .thesis-photo{margin:30px auto 0;max-width:560px;text-align:center}
+  .thesis-photo img{width:100%;height:auto;border-radius:12px;display:block;cursor:zoom-in;box-shadow:0 12px 34px rgba(61,52,42,.16);-webkit-user-drag:none}
+  .thesis-photo figcaption{margin-top:10px;font-size:12.5px;color:var(--ink-soft);font-family:var(--sans);letter-spacing:.02em}
   .docs-jump{display:inline-flex;align-items:center;gap:7px;margin-top:22px;padding:11px 22px;border:1px solid var(--gold-soft);border-radius:30px;color:var(--gold);font-family:var(--sans);font-size:14px;letter-spacing:.02em;cursor:pointer;background:transparent;transition:background .25s,color .25s,border-color .25s}
   .docs-jump:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
   .schema figcaption{padding:8px 2px 2px;font-size:13.5px;color:var(--ink);font-family:var(--serif)}
@@ -286,7 +283,6 @@
 <section class="view active" id="view-home">
   <div class="home-blob" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="home-grid">
     <div class="home-inner">
       <p class="eyebrow"><span class="en">Geographer & architect · Postdoctoral researcher</span><span class="fr">Géographe & architecte · Postdoctorante</span></p>
       <h1><span class="en">Gender, memory<br>and urban space.</span><span class="fr">Genre, mémoire<br>et espace urbain.</span></h1>
@@ -317,11 +313,6 @@
         <a onclick="showView('research')"><span class="en">Explore my research →</span><span class="fr">Découvrir mes recherches →</span></a>
         <a onclick="showView('publications')">Publications →</a>
       </div>
-    </div>
-    <figure class="home-photo">
-      <img src="images/soutenance.jpg?v=52" loading="lazy" draggable="false" oncontextmenu="return false" alt="Alexandra Mallah lors de sa soutenance de thèse">
-      <figcaption><span class="en">PhD defence · EHESS, 2025</span><span class="fr">Soutenance de thèse · EHESS, 2025</span></figcaption>
-    </figure>
     </div>
   </div>
 </section>
@@ -372,6 +363,10 @@
           <span class="fr">Quatre principaux résultats émergent de cette recherche. Premièrement, la visibilité ne se réduit pas à une propriété intrinsèque d'un signe : elle dépend d'un réseau de facteurs spatiaux (localisation, densité, co-présence), symboliques (charge mémorielle des lieux), graphiques (style, lisibilité), temporels (répétition, effacement), et sociaux (fréquentation, interactions). Deuxièmement, les mémoires féminines et féministes à Paris se déploient de façon fragmentée sur le territoire. Ces deux résultats en révèlent un troisième : les modalités d'inscription de la mémoire féminine à Paris contribuent à rejouer, voire à reconduire, des logiques d'inégalités de genre. À ce titre, la thèse montre que la mémoire des femmes et des minorités de genre reste une mémoire <em>dans</em> la ville, mais peine encore à devenir une mémoire <em>de</em> la ville. Enfin, malgré les limites que nous mettons en évidence quant à la visibilité des écritures mémorielles féminines et féministes, ce travail révèle l'émergence de pratiques mémorielles féministes contestataires qui subvertissent les formes classiques de commémoration. En valorisant d'autres formes de mise en mémoire, elles gagnent à être envisagées sous le terme de <em>matrimoine critique</em>.</span>
         </p>
       </div>
+      <figure class="thesis-photo">
+        <img src="images/soutenance.jpg?v=52" loading="lazy" draggable="false" oncontextmenu="return false" alt="Alexandra Mallah lors de sa soutenance de thèse">
+        <figcaption><span class="en">PhD defence · EHESS, 14 November 2025</span><span class="fr">Soutenance de thèse · EHESS, 14 novembre 2025</span></figcaption>
+      </figure>
       <div style="text-align:center">
         <a class="docs-jump" onclick="goDocs()" role="button" tabindex="0"><span class="en">See the thesis figures &amp; maps</span><span class="fr">Voir les figures &amp; cartes de la thèse</span> <span aria-hidden="true">→</span></a>
       </div>
@@ -400,7 +395,7 @@
               <figure class="schema paper"><img class="fr" src="images/carte-feminicides.png?v=50" loading="lazy" draggable="false" alt="Carte de la géographie des collages contre les féminicides à Paris"><img class="en" src="images/carte-feminicides-en.png?v=50" loading="lazy" draggable="false" alt="Map of the geography of anti-femicide collages in Paris"><figcaption><span class="en">Geography of anti-femicide collages, 2019–2024 · Paris</span><span class="fr">Géographie des collages contre les féminicides, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
               <figure class="schema paper"><img class="fr" src="images/carte-visibilite.png?v=52" loading="lazy" draggable="false" alt="Carte du niveau de visibilité des collages selon leur rue d'implantation"><img class="en" src="images/carte-visibilite-en.png?v=52" loading="lazy" draggable="false" alt="Map of collage visibility by street, Paris"><figcaption><span class="en">Visibility of collages by street where posted · Paris</span><span class="fr">Niveau de visibilité des collages selon leur rue d'implantation, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: APUR &amp; A. Mallah</span><span class="fr">Source : APUR &amp; A. Mallah</span></span></figcaption></figure>
               <figure class="schema paper"><img class="fr" src="images/carte-syntheses.png?v=51" loading="lazy" draggable="false" alt="Synthèse des géographies des mémoires féminines et féministes à Paris"><img class="en" src="images/carte-syntheses-en.png?v=51" loading="lazy" draggable="false" alt="Synthesis map of women's and feminist memory geographies in Paris"><figcaption><span class="en">Synthesis of women's and feminist memory geographies · Paris</span><span class="fr">Synthèse des géographies des mémoires féminines et féministes, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/carte-perimetre.png?v=50" loading="lazy" draggable="false" alt="Identification du périmètre englobant les collages produits lors d'une session"><img class="en" src="images/carte-perimetre-en.png?v=50" loading="lazy" draggable="false" alt="Identifying the perimeter enclosing the collages of a single session"><figcaption><span class="en">Perimeter enclosing the collages of a single session</span><span class="fr">Identification du périmètre englobant les collages d'une même session</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
+              <figure class="schema paper"><img class="fr" src="images/carte-perimetre.png?v=50" loading="lazy" draggable="false" alt="Identification du périmètre englobant les collages produits lors d'une session"><img class="en" src="images/carte-perimetre-en.png?v=56" loading="lazy" draggable="false" alt="Identifying the perimeter enclosing the collages of a single session"><figcaption><span class="en">Perimeter enclosing the collages of a single session</span><span class="fr">Identification du périmètre englobant les collages d'une même session</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
             </div>
           </div>
           <div class="doc-col">
@@ -670,7 +665,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v55</div>
+<div class="ver" id="ver">v56</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><span class="lb-nav lb-prev" id="lb-prev" role="button" aria-label="Image précédente">‹</span><span class="lb-nav lb-next" id="lb-next" role="button" aria-label="Image suivante">›</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
