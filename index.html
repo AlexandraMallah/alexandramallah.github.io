@@ -42,7 +42,7 @@
 }
 </script>
 <script>
-  var BUILD = 65;
+  var BUILD = 66;
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
@@ -263,6 +263,29 @@
     .doc-cols{grid-template-columns:1fr;gap:26px}
     .doc-scroll{max-height:none}
   }
+
+  /* ---- Refonte projets ---- */
+  .proj-h{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:42px 0 16px}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .proj-card{display:block;position:relative;overflow:hidden;border-radius:6px;cursor:pointer;text-decoration:none;background:var(--surface);border:1px solid var(--line)}
+  .proj-img{display:block;aspect-ratio:4/5;overflow:hidden;background:var(--line-soft)}
+  .proj-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.2,.6,.2,1)}
+  .proj-card:hover .proj-img img{transform:scale(1.05)}
+  .proj-ph{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 40% 35%,#f1e6d3,#e3d3b4);color:var(--gold-soft);font-family:var(--serif);font-style:italic;font-size:15px}
+  .proj-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(to top,rgba(28,22,14,.82),rgba(28,22,14,.25),rgba(28,22,14,0));color:#fff;pointer-events:none}
+  .proj-role{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.9;margin-bottom:4px}
+  .proj-title{display:block;font-family:var(--serif);font-size:19px;line-height:1.12;font-weight:500}
+  .proj-back{display:inline-block;font-size:13px;letter-spacing:.04em;color:var(--gold);margin-bottom:20px;cursor:pointer}
+  .proj-back:hover{text-decoration:underline}
+  .proj-meta{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px}
+  .proj-sec{margin-top:46px}
+  .fig-section{margin:0 0 30px}
+  .fig-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:26px 0 16px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  .fig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:16px;max-height:none;overflow:visible}
+  .fig-grid .schema, .fig-grid .doc{width:100%;margin:0}
+  .cv-cat{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--gold-soft)}
+  @media(max-width:760px){.proj-grid{grid-template-columns:1fr 1fr;gap:12px}}
+  @media(max-width:480px){.proj-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="lang-en">
@@ -272,83 +295,42 @@
     <span class="brand" onclick="showView('home')">Dr Alexandra Mallah</span>
     <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
     <nav class="menu" id="menu">
-      <a data-view="home" class="active" onclick="showView('home')"><span class="en">Home</span><span class="fr">Accueil</span></a>
-      <a data-view="research" onclick="showView('research')"><span class="en">Research</span><span class="fr">Recherche</span></a>
-      <a data-view="publications" onclick="showView('publications')">Publications</a>
-      <a data-view="talks" onclick="showView('talks')"><span class="en">Talks</span><span class="fr">Communications</span></a>
-      <a data-view="media" onclick="showView('media')"><span class="en">Media</span><span class="fr">Médias</span></a>
+      <a data-view="projects" class="active" onclick="showView('projects')"><span class="en">Projects</span><span class="fr">Projets</span></a>
+      <a data-view="cv" onclick="showView('cv')">CV</a>
       <a data-view="contact" onclick="showView('contact')">Contact</a>
-      <a href="cv-alexandra-mallah.pdf" target="_blank" rel="noopener" onclick="closeMenu()">CV <span aria-hidden="true">↗</span></a>
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">FR</button>
     </nav>
   </div>
 </header>
 
 <!-- ============ HOME (présentation) ============ -->
-<section class="view active" id="view-home">
-  <div class="home-blob" aria-hidden="true"></div>
+<!-- ============ PROJETS (landing) ============ -->
+<section class="view active" id="view-projects">
   <div class="wrap">
-    <div class="home-inner">
-      <p class="eyebrow"><span class="en">Geographer & architect · Postdoctoral researcher</span><span class="fr">Géographe & architecte · Postdoctorante</span></p>
-      <h1><span class="en">Gender, memory<br>and urban space.</span><span class="fr">Genre, mémoire<br>et espace urbain.</span></h1>
-      <p class="lede">
-        <span class="en">I am a geographer and postdoctoral researcher at the Université Polytechnique Hauts-de-France (LARSH laboratory). Within the RITMEA project, I study the ways of dwelling and the residential choices of French–Belgian cross-border families.</span>
-        <span class="fr">Je suis géographe, postdoctorante à l'Université Polytechnique Hauts-de-France (laboratoire LARSH). J'y mène, dans le cadre du projet RITMEA, une recherche sur les modes d'habiter et les choix résidentiels des familles transfrontalières franco-belges.</span>
-      </p>
-      <p>
-        <span class="en">Trained in both architecture and geography, in 2025 I defended a PhD at the EHESS and the Géographie-cités research unit, devoted to the territories of women's memory in public space. My work addresses gender, memory and the urban: I examine how women and gender minorities inscribe themselves — or struggle to inscribe themselves — in the city, through street names, feminist collages and monuments.</span>
-        <span class="fr">Formée à la fois à l'architecture et à la géographie, j'ai soutenu en 2025 une thèse à l'EHESS et au sein de l'UMR Géographie-cités, consacrée aux territoires de la mémoire des femmes dans l'espace public. Mes travaux portent sur le genre, la mémoire et l'espace urbain : j'étudie la façon dont les femmes et les minorités de genre s'inscrivent — ou peinent à s'inscrire — dans la ville, à travers les noms de rues, les collages féministes ou les monuments.</span>
-      </p>
-      <p>
-        <span class="en">I combine qualitative approaches (interviews, observation, archives) with quantitative ones (cartography, geographic information systems) to make often-overlooked spatial dynamics visible.</span>
-        <span class="fr">Je combine des approches qualitatives (entretiens, observation, archives) et quantitatives (cartographie, systèmes d'information géographique) pour rendre visibles des dynamiques spatiales souvent négligées.</span>
-      </p>
-      <div class="tags">
-        <span class="tag"><span class="en">Gender geography</span><span class="fr">Géographie du genre</span></span>
-        <span class="tag"><span class="en">Urban geography</span><span class="fr">Géographie urbaine</span></span>
-        <span class="tag"><span class="en">Public space</span><span class="fr">Espace public</span></span>
-        <span class="tag"><span class="en">Exposed writing</span><span class="fr">Écritures exposées</span></span>
-        <span class="tag"><span class="en">Gender & memory</span><span class="fr">Genre et mémoire</span></span>
-        <span class="tag"><span class="en">Appropriation</span><span class="fr">Appropriation</span></span>
-        <span class="tag"><span class="en">Semiology</span><span class="fr">Sémiologie</span></span>
-        <span class="tag"><span class="en">Politics of memory</span><span class="fr">Politique de la mémoire</span></span>
-        <span class="tag"><span class="en">Sites of memory</span><span class="fr">Lieux de mémoire</span></span>
-      </div>
-      <div class="enter">
-        <a onclick="showView('research')"><span class="en">Explore my research →</span><span class="fr">Découvrir mes recherches →</span></a>
-        <a onclick="showView('publications')">Publications →</a>
-      </div>
+    <p class="eyebrow"><span class="en">Geographer &amp; architect · Postdoctoral researcher</span><span class="fr">Géographe &amp; architecte · Postdoctorante</span></p>
+    <h1><span class="en">Gender, memory<br>and urban space.</span><span class="fr">Genre, mémoire<br>et espace urbain.</span></h1>
+    <p class="lede"><span class="en">I am a geographer and postdoctoral researcher (Université Polytechnique Hauts-de-France). My work explores gender, memory and urban space — through street names, feminist collages and the territories of women's memory.</span><span class="fr">Géographe et postdoctorante à l'Université Polytechnique Hauts-de-France, j'explore le genre, la mémoire et l'espace urbain — à travers les noms de rues, les collages féministes et les territoires de la mémoire des femmes.</span></p>
+    <p class="proj-h"><span class="en">Projects</span><span class="fr">Projets</span></p>
+    <div class="proj-grid">
+      <a class="proj-card" onclick="showView('proj-doctoral')" role="button" tabindex="0">
+        <span class="proj-img"><img src="images/projets/doctoral/acces.jpg?v=66" loading="lazy" draggable="false" alt="Géographie de l'invisible"></span>
+        <span class="proj-cap"><span class="proj-role"><span class="en">Doctoral project</span><span class="fr">Projet doctoral</span></span><span class="proj-title"><span class="en">Geography of the invisible</span><span class="fr">Géographie de l'invisible</span></span></span></a>
+      <a class="proj-card" onclick="showView('proj-master')" role="button" tabindex="0">
+        <span class="proj-img"><img src="images/projets/master/acces.jpg?v=66" loading="lazy" draggable="false" alt="Appropriation de l'espace public"></span>
+        <span class="proj-cap"><span class="proj-role"><span class="en">Master's project</span><span class="fr">Projet de master</span></span><span class="proj-title"><span class="en">Appropriating public space</span><span class="fr">Appropriation de l'espace public</span></span></span></a>
+      <a class="proj-card" onclick="showView('proj-postdoc')" role="button" tabindex="0">
+        <span class="proj-img proj-ph"><span class="en">Cross-border mobilities</span><span class="fr">Mobilités transfrontalières</span></span>
+        <span class="proj-cap"><span class="proj-role"><span class="en">Postdoctoral project</span><span class="fr">Projet postdoctoral</span></span><span class="proj-title"><span class="en">Cross-border mobilities</span><span class="fr">Les mobilités transfrontalières</span></span></span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ RESEARCH ============ -->
-<section class="view" id="view-research">
+<section class="view" id="view-proj-doctoral">
   <div class="wrap">
-    <p class="eyebrow"><span class="en">Research</span><span class="fr">Recherche</span></p>
-    <h2><span class="en">Lines of research</span><span class="fr">Mes recherches</span></h2>
-
-    <div class="tabs" role="tablist">
-      <button class="tab active" onclick="showTab(this,'p-postdoc')"><span class="en">Current project</span><span class="fr">Projet en cours</span></button>
-      <button class="tab" onclick="showTab(this,'p-thesis')"><span class="en">Doctoral thesis</span><span class="fr">Thèse de doctorat</span></button>
-      <button class="tab" onclick="showTab(this,'p-docs')"><span class="en">Documents</span><span class="fr">Documents</span></button>
-    </div>
-
-    <div class="panel active" id="p-postdoc">
-      <div class="card">
-        <p class="meta"><span class="en">Postdoctoral research · RITMEA project · since 2026</span><span class="fr">Postdoctorat · Projet RITMEA · depuis 2026</span></p>
-        <h3><span class="en">Ways of dwelling and residential choices of French–Belgian cross-border families</span><span class="fr">Modes d'habiter et choix résidentiels des familles transfrontalières franco-belges</span></h3>
-        <p>
-          <span class="en">At the Université Polytechnique Hauts-de-France (LARSH), I investigate how French–Belgian cross-border families dwell, move and choose where to live. The project is part of RITMEA (research and innovation in eco-responsible and autonomous transport and mobility) and combines field observation, semi-structured interviews and the analysis of GPS mobility data.</span>
-          <span class="fr">À l'Université Polytechnique Hauts-de-France (LARSH), j'étudie la manière dont les familles transfrontalières franco-belges habitent, se déplacent et choisissent leur lieu de vie. La recherche s'inscrit dans le projet RITMEA (recherche et innovation en transports et mobilité éco-responsables et autonomes) et associe observation de terrain, entretiens semi-directifs et analyse de données de mobilité GPS.</span>
-        </p>
-        <a class="online" style="display:inline-block;margin-top:4px" href="https://www.frttm.fr/ritmea" target="_blank" rel="noopener"><span class="en">The RITMEA project</span><span class="fr">Le projet RITMEA</span> <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-
-    <div class="panel" id="p-thesis">
-      <img class="thesis-banner" src="images/banniere-memorial.jpg" loading="lazy" draggable="false" oncontextmenu="return false" alt="Mur de noms du mémorial des victimes de féminicides, Paris">
-      <div class="card">
+    <a class="proj-back" onclick="showView('projects')" role="button" tabindex="0"><span class="en">← Projects</span><span class="fr">← Projets</span></a>
+    <p class="proj-meta"><span class="en">Doctoral project · 2021–2025</span><span class="fr">Projet doctoral · 2021–2025</span></p>
+    <img class="thesis-banner" src="images/banniere-memorial.jpg?v=66" loading="lazy" draggable="false" oncontextmenu="return false" alt="Mur de noms du mémorial des victimes de féminicides, Paris">
+    <div class="card">
         <p class="meta"><span class="en">PhD in Geography · EHESS & UMR Géographie-cités · 2025</span><span class="fr">Doctorat de géographie · EHESS & UMR Géographie-cités · 2025</span></p>
         <h3><em>Géographie de l'invisible : les territoires de la mémoire des femmes</em></h3>
         <p style="color:var(--ink-faint);font-size:15px;margin-top:-4px">
@@ -372,94 +354,17 @@
           <p><strong><span class="en">Doctoral committee</span><span class="fr">Comité de suivi</span></strong> · Fabrice Ripoll, Marylène Lieber, Djemila Zeneidi, Lucie Marinier.</p>
         </div>
       </div>
-      <figure class="thesis-photo">
+    <figure class="thesis-photo">
         <img src="images/soutenance.jpg?v=52" loading="lazy" draggable="false" oncontextmenu="return false" alt="Alexandra Mallah lors de sa soutenance de thèse">
         <figcaption><span class="en">PhD defence · EHESS, 14 November 2025</span><span class="fr">Soutenance de thèse · EHESS, 14 novembre 2025</span></figcaption>
       </figure>
-      <div style="text-align:center">
-        <a class="docs-jump" onclick="goDocs()" role="button" tabindex="0"><span class="en">See the thesis figures &amp; maps</span><span class="fr">Voir les figures &amp; cartes de la thèse</span> <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-
-    <div class="panel" id="p-docs">
-      <p class="gallery-note"><span class="en">A selection of my maps, visualisations and documents.</span><span class="fr">Une sélection de mes cartes, visualisations et documents.</span></p>
-
-      <div class="doc-section">
-        <h3><span class="en">PhD thesis</span><span class="fr">Thèse</span></h3>
-        <div class="doc-cols" oncontextmenu="return false">
-          <div class="doc-col">
-            <h4><span class="en">Photographs</span><span class="fr">Photographies</span></h4>
-            <div class="doc-scroll">
-              <figure class="doc"><img src="images/memorial-mur.jpg" loading="lazy" draggable="false" alt="Mur de noms du mémorial des victimes de féminicides, rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-noms.jpg" loading="lazy" draggable="false" alt="Ajout de noms sur le mémorial, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-anonymes.jpg" loading="lazy" draggable="false" alt="Mémorial, noms et anonymes, Paris"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-rose.jpg" loading="lazy" draggable="false" alt="Rose blanche déposée sur le mémorial, rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure>
-              <figure class="doc"><img src="images/memorial-sang.jpg" loading="lazy" draggable="false" alt="Collage « Féminicides : leur sang sur vos murs », rue Bouvier, Paris"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure>
-            </div>
-          </div>
-          <div class="doc-col">
-            <h4><span class="en">Maps</span><span class="fr">Cartes</span></h4>
-            <div class="doc-scroll">
-              <figure class="schema paper"><img class="fr" src="images/carte-voies-feminines.png?v=48" loading="lazy" draggable="false" alt="Carte des voies féminines de Paris selon leur date de baptême"><img class="en" src="images/carte-voies-feminines-en.png?v=48" loading="lazy" draggable="false" alt="Map of streets named after women in Paris, by date of naming"><figcaption><span class="en">Streets named after women, by date of naming · Paris</span><span class="fr">Voies féminines selon leur date de baptême, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/carte-feminicides.png?v=50" loading="lazy" draggable="false" alt="Carte de la géographie des collages contre les féminicides à Paris"><img class="en" src="images/carte-feminicides-en.png?v=50" loading="lazy" draggable="false" alt="Map of the geography of anti-femicide collages in Paris"><figcaption><span class="en">Geography of anti-femicide collages, 2019–2024 · Paris</span><span class="fr">Géographie des collages contre les féminicides, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/carte-visibilite.png?v=52" loading="lazy" draggable="false" alt="Carte du niveau de visibilité des collages selon leur rue d'implantation"><img class="en" src="images/carte-visibilite-en.png?v=52" loading="lazy" draggable="false" alt="Map of collage visibility by street, Paris"><figcaption><span class="en">Visibility of collages by street where posted · Paris</span><span class="fr">Niveau de visibilité des collages selon leur rue d'implantation, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: APUR &amp; A. Mallah</span><span class="fr">Source : APUR &amp; A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/carte-syntheses.png?v=51" loading="lazy" draggable="false" alt="Synthèse des géographies des mémoires féminines et féministes à Paris"><img class="en" src="images/carte-syntheses-en.png?v=51" loading="lazy" draggable="false" alt="Synthesis map of women's and feminist memory geographies in Paris"><figcaption><span class="en">Synthesis of women's and feminist memory geographies · Paris</span><span class="fr">Synthèse des géographies des mémoires féminines et féministes, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/carte-perimetre.png?v=50" loading="lazy" draggable="false" alt="Identification du périmètre englobant les collages produits lors d'une session"><img class="en" src="images/carte-perimetre-en.png?v=56" loading="lazy" draggable="false" alt="Identifying the perimeter enclosing the collages of a single session"><figcaption><span class="en">Perimeter enclosing the collages of a single session</span><span class="fr">Identification du périmètre englobant les collages d'une même session</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
-            </div>
-          </div>
-          <div class="doc-col">
-            <h4><span class="en">Sketches</span><span class="fr">Croquis</span></h4>
-            <div class="doc-scroll">
-              <figure class="schema"><img src="images/schema-boulevard.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un boulevard parisien"><figcaption><span class="en">Typical schema of a boulevard</span><span class="fr">Schéma type d'un boulevard</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-avenue.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une avenue parisienne"><figcaption><span class="en">Typical schema of an avenue</span><span class="fr">Schéma type d'une avenue</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-rue.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une rue parisienne"><figcaption><span class="en">Typical schema of a street</span><span class="fr">Schéma type d'une rue</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-promenade.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une promenade parisienne"><figcaption><span class="en">Typical schema of a promenade</span><span class="fr">Schéma type d'une promenade</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-passage.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'un passage parisien"><figcaption><span class="en">Typical schema of a passage</span><span class="fr">Schéma type d'un passage</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-cite-villa.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une cité ou villa parisienne"><figcaption><span class="en">Typical schema of a “cité” / “villa”</span><span class="fr">Schéma type d'une cité ou villa</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema"><img src="images/schema-allee.png?v=3" loading="lazy" draggable="false" alt="Schéma type d'une allée parisienne"><figcaption><span class="en">Typical schema of an allée</span><span class="fr">Schéma type d'une allée</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/croquis-plaques.png?v=44" loading="lazy" draggable="false" alt="Croquis du positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier"><figcaption><span class="en">Placement of street signs at boulevard Pereire × rue Laugier · Paris</span><span class="fr">Positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier, à Paris</span><span class="credit">© Alexandra Mallah, 2022</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/croquis-publicite.png?v=44" loading="lazy" draggable="false" alt="Analyse de quatre panneaux publicitaires : espace de la page, écriture et hauteur d'affichage"><figcaption><span class="en">Advertising panels: page space, writing and display height</span><span class="fr">Les panneaux publicitaires : espace de la page, écriture et hauteur d'affichage</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/croquis-strategies.png?v=41" loading="lazy" draggable="false" alt="Croquis de deux stratégies d'affichage des collages et de leur incidence sur la visibilité"><figcaption><span class="en">Two strategies for posting collages and their effect on visibility</span><span class="fr">Deux stratégies d'affichage des collages et leur incidence sur la visibilité</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure>
-            </div>
-          </div>
-          <div class="doc-col">
-            <h4><span class="en">Diagrams &amp; charts</span><span class="fr">Graphiques &amp; schémas</span></h4>
-            <div class="doc-scroll">
-              <figure class="schema paper"><img src="images/fig-corpus.png?v=46" loading="lazy" draggable="false" alt="Schéma de la construction du corpus de recherche par affinages successifs"><figcaption><span class="en">Building the research corpus through successive refinements</span><span class="fr">Construction du corpus de recherche par affinages successifs</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/fig-schemes.png?v=41" loading="lazy" draggable="false" alt="Schéma des schèmes temporels et spatiaux qui régissent l'existence des écrits"><figcaption><span class="en">Temporal and spatial schemes governing the life of public writings</span><span class="fr">Schèmes temporels et spatiaux qui régissent l'existence des écrits</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/fig-visibilite.png?v=47" loading="lazy" draggable="false" alt="Schéma de la visibilité des écritures exposées selon une approche temporelle"><figcaption><span class="en">The visibility of public writings through a temporal lens</span><span class="fr">Synthèse de la visibilité des écritures exposées selon une approche temporelle</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img src="images/fig-pantheon.png?v=41" loading="lazy" draggable="false" alt="Schéma de l'organisation des marqueurs mémoriels de la place du Panthéon selon le type de mémoire"><figcaption><span class="en">Mapping the memorial markers of place du Panthéon by type of memory</span><span class="fr">Organisation des marqueurs mémoriels de la place du Panthéon selon le type de mémoire</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/fig-odonymes-temps.png?v=55" loading="lazy" draggable="false" alt="Graphique de l'évolution de la production des odonymes de 1860 à 2024 à Paris"><img class="en" src="images/fig-odonymes-temps-en.png?v=55" loading="lazy" draggable="false" alt="Chart: evolution of street-name creation, 1860–2024, Paris"><figcaption><span class="en">Evolution of street-name creation, 1860–2024 · Paris</span><span class="fr">Évolution de la production des odonymes, de 1860 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/fig-odonymes-mandat.png?v=55" loading="lazy" draggable="false" alt="Graphique de la production des odonymes par mandat municipal de 1983 à 2024 à Paris"><img class="en" src="images/fig-odonymes-mandat-en.png?v=59" loading="lazy" draggable="false" alt="Chart: street-name creation by municipal term, 1983–2024, Paris"><figcaption><span class="en">Street-name creation by municipal term, 1983–2024 · Paris</span><span class="fr">Production des odonymes par mandat municipal, de 1983 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/fig-collages-total.png?v=55" loading="lazy" draggable="false" alt="Graphique de la part des collages commémoratifs dans le total de 2019 à 2024 à Paris"><img class="en" src="images/fig-collages-total-en.png?v=55" loading="lazy" draggable="false" alt="Chart: commemorative collages as a share of the total, 2019–2024, Paris"><figcaption><span class="en">Commemorative collages as a share of the total, 2019–2024 · Paris</span><span class="fr">Part des collages commémoratifs dans le total, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
-              <figure class="schema paper"><img class="fr" src="images/fig-collages-temps.png?v=57" loading="lazy" draggable="false" alt="Graphique de l'évolution mensuelle de la production des collages de 2019 à 2024 à Paris"><img class="en" src="images/fig-collages-temps-en.png?v=57" loading="lazy" draggable="false" alt="Chart: monthly evolution of collage production, 2019–2024, Paris"><figcaption><span class="en">Monthly evolution of collage production, 2019–2024 · Paris</span><span class="fr">Évolution de la production des collages, par mois, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="doc-section">
-        <h3><span class="en">RITMEA project</span><span class="fr">Projet RITMEA</span></h3>
-        <p style="font-family:var(--serif);font-style:italic;color:var(--ink-faint);font-size:16px;margin:4px 0 0"><span class="en">Documents to come.</span><span class="fr">Documents à venir.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PUBLICATIONS ============ -->
-<section class="view" id="view-publications">
-  <div class="wrap">
-    <p class="eyebrow">Publications</p>
-    <h2><span class="en">Selected publications</span><span class="fr">Publications</span></h2>
-
+    <h2 class="proj-sec"><span class="en">Outputs</span><span class="fr">Productions</span></h2>
     <div class="group">
       <h3><span class="en">PhD thesis</span><span class="fr">Thèse de doctorat</span></h3>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t"><em>Géographie de l'invisible : les territoires de la mémoire des femmes</em></p>
         <p class="src"><span class="en">PhD in Geography, EHESS & UMR Géographie-cités · Supervised by Nicolas Verdier · Defended 14 November 2025.</span><span class="fr">Thèse de doctorat en géographie, EHESS & UMR Géographie-cités · Direction : Nicolas Verdier · Soutenue le 14 novembre 2025.</span> · <a class="online" href="https://theses.fr/2025EHES0116" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">Peer-reviewed articles</span><span class="fr">Articles dans une revue à comité de lecture</span></h3>
       <div class="entry forthcoming"><div class="yr">2027</div><div>
         <p class="t">«&nbsp;Le Panthéon sous tension : quand le matrimoine fait vaciller les grands hommes&nbsp;» <span class="status"><span class="en">Forthcoming</span><span class="fr">À paraître</span></span></p>
@@ -470,22 +375,7 @@
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">«&nbsp;Les collages contre les féminicides : le signe de l'appropriation de l'espace public&nbsp;»</p>
         <p class="src"><em>Mosaïque</em>, n°21 · <a class="online" href="https://www.peren-revues.fr/mosaique/2588" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
-      <h3><span class="en">Book chapters</span><span class="fr">Chapitres d'ouvrage</span></h3>
-      <div class="entry"><div class="yr">2021</div><div>
-        <p class="t">«&nbsp;La rue, un espace de domination masculine&nbsp;»</p>
-        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 48–50. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-      <div class="entry"><div class="yr">2021</div><div>
-        <p class="t">«&nbsp;Les collages comme moyen de se réapproprier l'espace urbain&nbsp;»</p>
-        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 51–59. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-      <div class="entry"><div class="yr">2021</div><div>
-        <p class="t">«&nbsp;Le déséquilibre spatial des collages dans Paris&nbsp;»</p>
-        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 60–67. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">Datasets</span><span class="fr">Bases de données</span></h3>
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">«&nbsp;Genre des odonymes parisiens. Analyse des odonymes parisiens selon une approche genrée&nbsp;»</p>
@@ -493,9 +383,7 @@
       <div class="entry"><div class="yr">2025</div><div>
         <p class="t">«&nbsp;Base de données des collages féministes parisiens (2019–2024)&nbsp;»</p>
         <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.ABE2875S · <a class="online" href="https://doi.org/10.34847/NKL.ABE2875S" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">Outreach</span><span class="fr">Vulgarisation</span></h3>
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t"><span class="en">Guest contribution to the MOOC <em>Dénommer le monde : la politique des toponymes</em></span><span class="fr">Contribution au MOOC <em>Dénommer le monde : la politique des toponymes</em></span></p>
@@ -503,17 +391,7 @@
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">«&nbsp;Raconte-moi ta thèse #13 — Ce que le matrimoine fait au patrimoine&nbsp;»</p>
         <p class="src">EHESS Alumni.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TALKS ============ -->
-<section class="view" id="view-talks">
-  <div class="wrap">
-    <p class="eyebrow"><span class="en">Talks</span><span class="fr">Communications</span></p>
-    <h2><span class="en">Conferences & talks</span><span class="fr">Communications scientifiques</span></h2>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">International conferences</span><span class="fr">Colloques internationaux</span></h3>
       <div class="entry"><div class="yr">2026</div><div>
         <p class="t">«&nbsp;Les odonymes féminins à Paris, une reproduction spatiale des inégalités de genre à l'œuvre dans la société ?&nbsp;»</p>
@@ -530,9 +408,7 @@
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t">«&nbsp;Ce que les collages contre les féminicides font à la ville&nbsp;»</p>
         <p class="src">Colloque «&nbsp;Créatrices dans la cité&nbsp;», Université Gustave Eiffel, Champs-sur-Marne · <a class="online" href="https://mission-egalite.univ-gustave-eiffel.fr/actualites/actualites-details/colloque-cite-des-dames-creatrices-dans-la-cite" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">Study days</span><span class="fr">Journées d'étude</span></h3>
       <div class="entry"><div class="yr">2026</div><div>
         <p class="t">«&nbsp;La fabrique de l'interdisciplinarité : géographie et gender studies en dialogue dans le cadre d'une recherche doctorale&nbsp;»</p>
@@ -552,9 +428,7 @@
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien : le cas des odonymes&nbsp;»</p>
         <p class="src">Journée d'étude «&nbsp;Femmes et odonymes&nbsp;» (PROGEVI), Lab'URBA, Champs-sur-Marne · <a class="online" href="https://progevi.hypotheses.org/94" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">Research seminars</span><span class="fr">Séminaires de recherche</span></h3>
       <div class="entry"><div class="yr">2024</div><div>
         <p class="t">«&nbsp;Les odonymes féminins à Paris, une politique volontariste qui pose question&nbsp;»</p>
@@ -568,9 +442,7 @@
       <div class="entry"><div class="yr">2022</div><div>
         <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien ? Le cas des odonymes&nbsp;»</p>
         <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Fontainebleau · <a class="online" href="https://geographie-cites.cnrs.fr/les-journees-des-doctorant%C2%B7e%C2%B7s-de-lequipe-ehgo/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h3><span class="en">Invited scientific events</span><span class="fr">Invitations à des événements scientifiques</span></h3>
       <div class="entry"><div class="yr">2026</div><div>
         <p class="t"><span class="en">Invited opening of the institutional session</span><span class="fr">Intervention d'ouverture de la session institutionnelle (sur invitation)</span></p>
@@ -584,9 +456,211 @@
       <div class="entry"><div class="yr">2023</div><div>
         <p class="t"><span class="en">International symposium “Gender, place names and public space”</span><span class="fr">Symposium international «&nbsp;Genre, noms de lieux et espace public&nbsp;»</span></p>
         <p class="src">Chaire UNESCO en toponymie inclusive, Genève · <a class="online" href="https://neotopo.hypotheses.org/8612" target="_blank" rel="noopener">Policy brief <span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Public engagement</span><span class="fr">Médiation scientifique et culturelle</span></h3>
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t"><span class="en">Talk within a school podcast project</span><span class="fr">Intervention dans un projet pédagogique de podcast</span></p>
+        <p class="src"><span class="en">Collège Antoine Laurent de Lavoisier (France Culture & Radio Campus Paris) — talk on research careers and the matrimony; the podcast was produced by the pupils. Pantin.</span><span class="fr">Collège Antoine Laurent de Lavoisier (France Culture & Radio Campus Paris) — présentation des métiers de la recherche et du matrimoine ; le podcast a été réalisé par les élèves. Pantin.</span></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t"><span class="en">Round table “Archives and traces: the difficulty of building a matrimony”</span><span class="fr">Table ronde «&nbsp;Archives et traces : de la difficulté de constituer un matrimoine&nbsp;»</span></p>
+        <p class="src">Philharmonie de Paris · <a class="online" href="https://philharmoniedeparis.fr/fr/activite/forum/26791-matrimoine-pour-faire-genre" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;Les noms de rues féminins à Paris : une politique urbaine qui pose question&nbsp;»</p>
+        <p class="src"><span class="en">Talk to senior high-school classes, Lycée Victor Hugo, Paris.</span><span class="fr">Intervention auprès de classes de première, lycée Victor Hugo, Paris.</span></p></div></div>
+      <div class="entry"><div class="yr">2022</div><div>
+        <p class="t">«&nbsp;Enjeux et limites des odonymes féminins à Paris&nbsp;»</p>
+        <p class="src"><span class="en">Talk to senior high-school classes, Lycée Victor Hugo, Paris.</span><span class="fr">Intervention auprès de classes de première, lycée Victor Hugo, Paris.</span></p></div></div>
+      <div class="entry"><div class="yr">2022</div><div>
+        <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien ?&nbsp;»</p>
+        <p class="src"><span class="en">National Institute of Geographic and Forest Information (IGN), Paris.</span><span class="fr">Institut national de l'information géographique et forestière (IGN), Paris.</span></p></div></div>
+    </div><div class="group">
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t">«&nbsp;Rue Simone-Veil, rue Rosa-Parks… Les personnalités féminines désormais privilégiées pour baptiser les nouvelles voies&nbsp;»</p>
+        <p class="src"><span class="outlet">Le Monde</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Adel Miliani & Manon Romain · <a class="online" href="https://www.lemonde.fr/les-decodeurs/article/2026/01/11/rue-simone-veil-rue-rosa-parks-les-personnalites-feminines-desormais-privilegiees-pour-baptiser-les-nouvelles-voies_6661351_4355770.html" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">«&nbsp;#MeToo odonymique : les débaptisations de lieux publics au nom de l'abbé Pierre&nbsp;»</p>
+        <p class="src"><span class="outlet">Libération</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Margaux Gable · <a class="online" href="https://www.liberation.fr/societe/rues-squares-ecoles-partout-en-france-les-debaptisations-de-lieux-publics-au-nom-de-labbe-pierre-sont-en-cours-20241009_437TDJJYKBGAFIBH7R6XUWGJ3A/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">«&nbsp;Le mouvement Collages Féminicides de Paris fête ses cinq ans&nbsp;»</p>
+        <p class="src"><span class="outlet">L'Humanité</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Léa Petit Scalogna · <a class="online" href="https://www.humanite.fr/feminisme/feminisme/depuis-un-quinquennat-les-feministes-sont-dans-la-rue-pas-au-gouvernement-le-mouvement-collages-feminicides-de-paris-fete-ses-cinq-ans-dexistence" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;La féminisation des noms de lieux évolue, mais il reste peu de place&nbsp;»</p>
+        <p class="src"><span class="outlet">France Inter</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Juliette Geay · <a class="online" href="https://www.radiofrance.fr/franceinter/pantin-pantine-la-feminisation-des-noms-de-lieux-evolue-assez-vite-mais-il-reste-peu-de-place-9639795" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;La ville de Pantin rebaptisée "Pantine" : pourquoi ça crispe tant ?&nbsp;»</p>
+        <p class="src"><span class="outlet">Le Parisien</span> — <span class="en">interview by</span><span class="fr">entretien par</span> Christine Mateus · <a class="online" href="https://www.leparisien.fr/seine-saint-denis-93/la-ville-de-pantin-rebaptisee-pantine-pourquoi-ca-crispe-tant-04-01-2023-CO36ASKECRAUNOANYE62QH2KPM.php" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2022</div><div>
+        <p class="t">«&nbsp;5 ans après #MeToo, a-t-on féminisé les noms de lieux ?&nbsp;»</p>
+        <p class="src"><span class="outlet">France Culture</span> — <span class="en">“Géographie à la carte”.</span><span class="fr">émission «&nbsp;Géographie à la carte&nbsp;».</span> · <a class="online" href="https://www.radiofrance.fr/franceculture/podcasts/geographie-a-la-carte/geographie-a-la-carte-5-ans-apres-metoo-a-t-on-feminise-les-noms-de-lieux-7209645" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
     </div>
+    <h2 class="proj-sec"><span class="en">Graphic documents</span><span class="fr">Documents graphiques</span></h2>
+    <div class="fig-section"><h3 class="fig-h"><span class="en">Collages</span><span class="fr">Collages</span></h3><div class="fig-grid doc-scroll"><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-collages/geographie-des-collages-contre-les-feminicides-fr.png?v=66" loading="lazy" draggable="false" alt="Géographie des collages contre les féminicides, de 2019 à 2024, à Paris"><img class="en" src="images/projets/doctoral/section-collages/geographie-des-collages-contre-les-feminicides-en.png?v=66" loading="lazy" draggable="false" alt="Geography of anti-femicide collages, 2019–2024 · Paris"><figcaption><span class="en">Geography of anti-femicide collages, 2019–2024 · Paris</span><span class="fr">Géographie des collages contre les féminicides, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-collages/visibilite-des-collages-fr.png?v=66" loading="lazy" draggable="false" alt="Niveau de visibilité des collages selon leur rue d'implantation, à Paris"><img class="en" src="images/projets/doctoral/section-collages/visibilite-des-collages-en.png?v=66" loading="lazy" draggable="false" alt="Visibility of collages by street where posted · Paris"><figcaption><span class="en">Visibility of collages by street where posted · Paris</span><span class="fr">Niveau de visibilité des collages selon leur rue d'implantation, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: APUR &amp; A. Mallah</span><span class="fr">Source : APUR &amp; A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-collages/part-des-collages-commemoratifs-fr.png?v=66" loading="lazy" draggable="false" alt="Part des collages commémoratifs dans le total, de 2019 à 2024, à Paris"><img class="en" src="images/projets/doctoral/section-collages/part-des-collages-commemoratifs-en.png?v=66" loading="lazy" draggable="false" alt="Commemorative collages as a share of the total, 2019–2024 · Paris"><figcaption><span class="en">Commemorative collages as a share of the total, 2019–2024 · Paris</span><span class="fr">Part des collages commémoratifs dans le total, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-collages/evolution-mensuelle-des-collages-fr.png?v=66" loading="lazy" draggable="false" alt="Évolution de la production des collages, par mois, de 2019 à 2024, à Paris"><img class="en" src="images/projets/doctoral/section-collages/evolution-mensuelle-des-collages-en.png?v=66" loading="lazy" draggable="false" alt="Monthly evolution of collage production, 2019–2024 · Paris"><figcaption><span class="en">Monthly evolution of collage production, 2019–2024 · Paris</span><span class="fr">Évolution de la production des collages, par mois, de 2019 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-collages/quartier-folie-mericourt.png?v=66" loading="lazy" draggable="false" alt="Les collages dans le quartier de la Folie-Méricourt, à Paris"><figcaption><span class="en">Collages in the Folie-Méricourt district · Paris</span><span class="fr">Les collages dans le quartier de la Folie-Méricourt, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="doc"><img src="images/projets/doctoral/section-collages/rue-bouvier-janvier-2023.jpg?v=66" loading="lazy" draggable="false" alt="Rue Bouvier, Paris · January 2023"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure><figure class="doc"><img src="images/projets/doctoral/section-collages/rue-bouvier-janvier-2023-1.jpg?v=66" loading="lazy" draggable="false" alt="Rue Bouvier, Paris · January 2023"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure><figure class="doc"><img src="images/projets/doctoral/section-collages/rue-bouvier-janvier-2023-2.jpg?v=66" loading="lazy" draggable="false" alt="Rue Bouvier, Paris · January 2023"><figcaption><span class="en">Rue Bouvier, Paris · January 2023</span><span class="fr">Rue Bouvier, Paris · janvier 2023</span><span class="credit">© Alexandra Mallah, 2023</span></figcaption></figure><figure class="doc"><img src="images/projets/doctoral/section-collages/rue-du-chevaleret-janvier-2024.jpg?v=66" loading="lazy" draggable="false" alt="Rue du Chevaleret, Paris · January 2024"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure><figure class="doc"><img src="images/projets/doctoral/section-collages/rue-du-chevaleret-janvier-2024-1.jpg?v=66" loading="lazy" draggable="false" alt="Rue du Chevaleret, Paris · January 2024"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure><figure class="doc"><img src="images/projets/doctoral/section-collages/rue-du-chevaleret-janvier-2024-2.jpg?v=66" loading="lazy" draggable="false" alt="Rue du Chevaleret, Paris · January 2024"><figcaption><span class="en">Rue du Chevaleret, Paris · January 2024</span><span class="fr">Rue du Chevaleret, Paris · janvier 2024</span><span class="credit">© Alexandra Mallah, 2024</span></figcaption></figure></div></div><div class="fig-section"><h3 class="fig-h"><span class="en">Street names &amp; odonymy</span><span class="fr">Odonymes &amp; noms de rues</span></h3><div class="fig-grid doc-scroll"><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-odonymes/voies-feminines-selon-leur-date-de-bapteme-fr.png?v=66" loading="lazy" draggable="false" alt="Voies féminines selon leur date de baptême, à Paris"><img class="en" src="images/projets/doctoral/section-odonymes/voies-feminines-selon-leur-date-de-bapteme-en.png?v=66" loading="lazy" draggable="false" alt="Streets named after women, by date of naming · Paris"><figcaption><span class="en">Streets named after women, by date of naming · Paris</span><span class="fr">Voies féminines selon leur date de baptême, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-odonymes/production-des-odonymes-par-mandat-fr.png?v=66" loading="lazy" draggable="false" alt="Production des odonymes par mandat municipal, de 1983 à 2024, à Paris"><img class="en" src="images/projets/doctoral/section-odonymes/production-des-odonymes-par-mandat-en.png?v=66" loading="lazy" draggable="false" alt="Street-name creation by municipal term, 1983–2024 · Paris"><figcaption><span class="en">Street-name creation by municipal term, 1983–2024 · Paris</span><span class="fr">Production des odonymes par mandat municipal, de 1983 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-odonymes/evolution-des-odonymes-18602024-fr.png?v=66" loading="lazy" draggable="false" alt="Évolution de la production des odonymes, de 1860 à 2024, à Paris"><img class="en" src="images/projets/doctoral/section-odonymes/evolution-des-odonymes-18602024-en.png?v=66" loading="lazy" draggable="false" alt="Evolution of street-name creation, 1860–2024 · Paris"><figcaption><span class="en">Evolution of street-name creation, 1860–2024 · Paris</span><span class="fr">Évolution de la production des odonymes, de 1860 à 2024, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-odonymes/graphique-part-genre-selon-generique-apres-2001-fr.png?v=66" loading="lazy" draggable="false" alt="Part des odonymes selon le genre et le type de générique, après 2001, à Paris"><img class="en" src="images/projets/doctoral/section-odonymes/graphique-part-genre-selon-generique-apres-2001-en.png?v=66" loading="lazy" draggable="false" alt="Share of street names by gender and type of generic term, after 2001 · Paris"><figcaption><span class="en">Share of street names by gender and type of generic term, after 2001 · Paris</span><span class="fr">Part des odonymes selon le genre et le type de générique, après 2001, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/plaques-de-rue-boulevard-pereire.png?v=66" loading="lazy" draggable="false" alt="Positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier, à Paris"><figcaption><span class="en">Placement of street signs at boulevard Pereire × rue Laugier · Paris</span><span class="fr">Positionnement des plaques de rue au croisement du boulevard Pereire et de la rue Laugier, à Paris</span><span class="credit">© Alexandra Mallah, 2022 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/schema-type-boulevard.png?v=66" loading="lazy" draggable="false" alt="Schéma type d'un boulevard"><figcaption><span class="en">Typical schema of a boulevard</span><span class="fr">Schéma type d'un boulevard</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/schema-type-avenue.png?v=66" loading="lazy" draggable="false" alt="Schéma type d'une avenue"><figcaption><span class="en">Typical schema of an avenue</span><span class="fr">Schéma type d'une avenue</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/schema-type-allee.png?v=66" loading="lazy" draggable="false" alt="Schéma type d'une allée"><figcaption><span class="en">Typical schema of an allée</span><span class="fr">Schéma type d'une allée</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/schema-type-promenade.png?v=66" loading="lazy" draggable="false" alt="Schéma type d'une promenade"><figcaption><span class="en">Typical schema of a promenade</span><span class="fr">Schéma type d'une promenade</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/schema-type-villa.png?v=66" loading="lazy" draggable="false" alt="Schéma type d'une cité ou villa"><figcaption><span class="en">Typical schema of a cité / villa</span><span class="fr">Schéma type d'une cité ou villa</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-odonymes/schema-type-passage-couvert.png?v=66" loading="lazy" draggable="false" alt="Schéma type d'un passage couvert"><figcaption><span class="en">Typical schema of a covered passage</span><span class="fr">Schéma type d'un passage couvert</span><span class="credit">© Alexandra Mallah, 2025</span></figcaption></figure></div></div><div class="fig-section"><h3 class="fig-h"><span class="en">Place du Panthéon</span><span class="fr">Place du Panthéon</span></h3><div class="fig-grid doc-scroll"><figure class="schema paper"><img src="images/projets/doctoral/section-pantheon/organisation-des-marqueurs-memoriels-de-la-place-du-pantheon-selon-le-type-de-memoire-vehiculee.png?v=66" loading="lazy" draggable="false" alt="Organisation des marqueurs mémoriels de la place du Panthéon selon le type de mémoire"><figcaption><span class="en">Mapping the memorial markers of place du Panthéon by type of memory</span><span class="fr">Organisation des marqueurs mémoriels de la place du Panthéon selon le type de mémoire</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure></div></div><div class="fig-section"><h3 class="fig-h"><span class="en">Cross-cutting documents</span><span class="fr">Documents transversaux</span></h3><div class="fig-grid doc-scroll"><figure class="schema paper"><img class="fr" src="images/projets/doctoral/section-transversale/synthese-des-geographies-des-memoires-fr.png?v=66" loading="lazy" draggable="false" alt="Synthèse des géographies des mémoires féminines et féministes, à Paris"><img class="en" src="images/projets/doctoral/section-transversale/synthese-des-geographies-des-memoires-en.png?v=66" loading="lazy" draggable="false" alt="Synthesis of women's and feminist memory geographies · Paris"><figcaption><span class="en">Synthesis of women's and feminist memory geographies · Paris</span><span class="fr">Synthèse des géographies des mémoires féminines et féministes, à Paris</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: Open Data Paris &amp; A. Mallah</span><span class="fr">Source : Open Data Paris &amp; A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-transversale/construction-du-corpus-de-recherche.png?v=66" loading="lazy" draggable="false" alt="Construction du corpus de recherche par affinages successifs"><figcaption><span class="en">Building the research corpus through successive refinements</span><span class="fr">Construction du corpus de recherche par affinages successifs</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-transversale/schemes-temporels-et-spatiaux.png?v=66" loading="lazy" draggable="false" alt="Schèmes temporels et spatiaux qui régissent l'existence des écrits"><figcaption><span class="en">Temporal and spatial schemes governing public writings</span><span class="fr">Schèmes temporels et spatiaux qui régissent l'existence des écrits</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-transversale/visibilite-des-ecritures-approche-temporelle.png?v=66" loading="lazy" draggable="false" alt="La visibilité des écritures exposées selon une approche temporelle"><figcaption><span class="en">The visibility of public writings through a temporal lens</span><span class="fr">La visibilité des écritures exposées selon une approche temporelle</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img src="images/projets/doctoral/section-transversale/panneaux-publicitaires.png?v=66" loading="lazy" draggable="false" alt="Les panneaux publicitaires : espace de la page, écriture et hauteur d'affichage"><figcaption><span class="en">Advertising panels: page space, writing and display height</span><span class="fr">Les panneaux publicitaires : espace de la page, écriture et hauteur d'affichage</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure></div></div>
+  </div>
+</section>
 
+<section class="view" id="view-proj-master">
+  <div class="wrap">
+    <a class="proj-back" onclick="showView('projects')" role="button" tabindex="0"><span class="en">← Projects</span><span class="fr">← Projets</span></a>
+    <p class="proj-meta"><span class="en">Master's project · 2020–2021</span><span class="fr">Projet de master · 2020–2021</span></p>
+    <div class="card">
+      <p class="meta"><span class="en">Master Territoires, espaces et sociétés · EHESS, 2020–2021 · supervised by Claudia Damasceno Fonseca</span><span class="fr">Master Territoires, espaces et sociétés · EHESS, 2020–2021 · dir. Claudia Damasceno Fonseca</span></p>
+      <h3><em>L'appropriation de l'espace public par les mouvements sociaux féministes : le cas de Collages Féminicides Paris</em></h3>
+      <p><span class="en">Carried out at the EHESS under the supervision of Claudia Damasceno Fonseca, this master's thesis analyses how the <em>Collages Féminicides Paris</em> movement appropriates Parisian public space. By bringing gender-based and sexual violence onto the city's walls, these ephemeral messages make visible an often-invisibilised issue. Drawing on fieldwork (observation, observant participation, mapping of pasting sessions), it examines the spatial distribution of activist practices, the struggle for legitimacy in public space, passers-by's reception, and the role of the wall at the boundary between public and private space.</span><span class="fr">Réalisé à l'EHESS sous la direction de Claudia Damasceno Fonseca, ce mémoire de master analyse l'appropriation de l'espace public parisien par le mouvement <em>Collages Féminicides Paris</em>. En portant les violences sexistes et sexuelles sur les murs de la ville, ces messages éphémères rendent visible un problème souvent invisibilisé. À partir d'une enquête de terrain (observation, participation observante, cartographie des sessions de collage), le travail interroge la répartition spatiale des activités militantes, la conquête de légitimité dans l'espace public, la réception par les passant·es, et le rôle du mur comme support à la frontière entre espace public et privé.</span></p>
+    </div>
+    <h2 class="proj-sec"><span class="en">Outputs</span><span class="fr">Productions</span></h2>
     <div class="group">
+      <h3><span class="en">Book chapters</span><span class="fr">Chapitres d'ouvrage</span></h3>
+      <div class="entry"><div class="yr">2021</div><div>
+        <p class="t">«&nbsp;La rue, un espace de domination masculine&nbsp;»</p>
+        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 48–50. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2021</div><div>
+        <p class="t">«&nbsp;Les collages comme moyen de se réapproprier l'espace urbain&nbsp;»</p>
+        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 51–59. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2021</div><div>
+        <p class="t">«&nbsp;Le déséquilibre spatial des collages dans Paris&nbsp;»</p>
+        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 60–67. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div>
+    <h2 class="proj-sec"><span class="en">Graphic documents</span><span class="fr">Documents graphiques</span></h2>
+    <div class="fig-section"><h3 class="fig-h"><span class="en">Collage sessions — perimeters</span><span class="fr">Sessions de collage — périmètres</span></h3><div class="fig-grid doc-scroll"><figure class="schema paper"><img class="fr" src="images/projets/master/session-2020-12-11.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2020.12.11"><img class="en" src="images/projets/master/session-2020-12-11-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2020.12.11"><figcaption><span class="en">Collage perimeter — session of 2020.12.11</span><span class="fr">Périmètre des collages — session du 2020.12.11</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2023-09-28.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2023.09.28"><img class="en" src="images/projets/master/session-2023-09-28-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2023.09.28"><figcaption><span class="en">Collage perimeter — session of 2023.09.28</span><span class="fr">Périmètre des collages — session du 2023.09.28</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2023-02-26.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2023.02.26"><img class="en" src="images/projets/master/session-2023-02-26-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2023.02.26"><figcaption><span class="en">Collage perimeter — session of 2023.02.26</span><span class="fr">Périmètre des collages — session du 2023.02.26</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2021-01-08.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2021.01.08"><img class="en" src="images/projets/master/session-2021-01-08-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2021.01.08"><figcaption><span class="en">Collage perimeter — session of 2021.01.08</span><span class="fr">Périmètre des collages — session du 2021.01.08</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2021-01-09.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2021.01.09"><img class="en" src="images/projets/master/session-2021-01-09-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2021.01.09"><figcaption><span class="en">Collage perimeter — session of 2021.01.09</span><span class="fr">Périmètre des collages — session du 2021.01.09</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2020-12-19.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2020.12.19"><img class="en" src="images/projets/master/session-2020-12-19-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2020.12.19"><figcaption><span class="en">Collage perimeter — session of 2020.12.19</span><span class="fr">Périmètre des collages — session du 2020.12.19</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2023-05-04.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2023.05.04"><img class="en" src="images/projets/master/session-2023-05-04-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2023.05.04"><figcaption><span class="en">Collage perimeter — session of 2023.05.04</span><span class="fr">Périmètre des collages — session du 2023.05.04</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2021-01-23.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2021.01.23"><img class="en" src="images/projets/master/session-2021-01-23-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2021.01.23"><figcaption><span class="en">Collage perimeter — session of 2021.01.23</span><span class="fr">Périmètre des collages — session du 2021.01.23</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2023-03-28.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2023.03.28"><img class="en" src="images/projets/master/session-2023-03-28-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2023.03.28"><figcaption><span class="en">Collage perimeter — session of 2023.03.28</span><span class="fr">Périmètre des collages — session du 2023.03.28</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2022-09-22.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2022.09.22"><img class="en" src="images/projets/master/session-2022-09-22-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2022.09.22"><figcaption><span class="en">Collage perimeter — session of 2022.09.22</span><span class="fr">Périmètre des collages — session du 2022.09.22</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure><figure class="schema paper"><img class="fr" src="images/projets/master/session-2023-02-06.png?v=66" loading="lazy" draggable="false" alt="Périmètre des collages — session du 2023.02.06"><img class="en" src="images/projets/master/session-2023-02-06-en.png?v=66" loading="lazy" draggable="false" alt="Collage perimeter — session of 2023.02.06"><figcaption><span class="en">Collage perimeter — session of 2023.02.06</span><span class="fr">Périmètre des collages — session du 2023.02.06</span><span class="credit">© Alexandra Mallah, 2025 · <span class="en">Source: A. Mallah</span><span class="fr">Source : A. Mallah</span></span></figcaption></figure></div></div>
+  </div>
+</section>
+
+<section class="view" id="view-proj-postdoc">
+  <div class="wrap">
+    <a class="proj-back" onclick="showView('projects')" role="button" tabindex="0"><span class="en">← Projects</span><span class="fr">← Projets</span></a>
+    <p class="proj-meta"><span class="en">Postdoctoral project · 2025–present</span><span class="fr">Projet postdoctoral · 2025–présent</span></p>
+    <div class="card">
+      <div class="card">
+        <p class="meta"><span class="en">Postdoctoral research · RITMEA project · since 2026</span><span class="fr">Postdoctorat · Projet RITMEA · depuis 2026</span></p>
+        <h3><span class="en">Ways of dwelling and residential choices of French–Belgian cross-border families</span><span class="fr">Modes d'habiter et choix résidentiels des familles transfrontalières franco-belges</span></h3>
+        <p>
+          <span class="en">At the Université Polytechnique Hauts-de-France (LARSH), I investigate how French–Belgian cross-border families dwell, move and choose where to live. The project is part of RITMEA (research and innovation in eco-responsible and autonomous transport and mobility) and combines field observation, semi-structured interviews and the analysis of GPS mobility data.</span>
+          <span class="fr">À l'Université Polytechnique Hauts-de-France (LARSH), j'étudie la manière dont les familles transfrontalières franco-belges habitent, se déplacent et choisissent leur lieu de vie. La recherche s'inscrit dans le projet RITMEA (recherche et innovation en transports et mobilité éco-responsables et autonomes) et associe observation de terrain, entretiens semi-directifs et analyse de données de mobilité GPS.</span>
+        </p>
+        <a class="online" style="display:inline-block;margin-top:4px" href="https://www.frttm.fr/ritmea" target="_blank" rel="noopener"><span class="en">The RITMEA project</span><span class="fr">Le projet RITMEA</span> <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <p class="lede" style="color:var(--ink-faint);font-style:italic;margin-top:24px"><span class="en">Outputs and graphic documents to come.</span><span class="fr">Productions et documents graphiques à venir.</span></p>
+  </div>
+</section>
+
+<section class="view" id="view-cv">
+  <div class="wrap">
+    <p class="eyebrow">CV</p>
+    <h2><span class="en">Curriculum vit&aelig;</span><span class="fr">Curriculum vit&aelig;</span></h2>
+    <p style="margin:-6px 0 22px"><a class="docs-jump" href="cv-alexandra-mallah.pdf" target="_blank" rel="noopener"><span class="en">Download CV</span><span class="fr">Télécharger le CV</span> <span aria-hidden="true">↓</span></a></p>
+    <p class="cv-cat"><span class="en">Publications</span><span class="fr">Publications</span></p>
+    <div class="group">
+      <h3><span class="en">PhD thesis</span><span class="fr">Thèse de doctorat</span></h3>
+      <div class="entry"><div class="yr">2025</div><div>
+        <p class="t"><em>Géographie de l'invisible : les territoires de la mémoire des femmes</em></p>
+        <p class="src"><span class="en">PhD in Geography, EHESS & UMR Géographie-cités · Supervised by Nicolas Verdier · Defended 14 November 2025.</span><span class="fr">Thèse de doctorat en géographie, EHESS & UMR Géographie-cités · Direction : Nicolas Verdier · Soutenue le 14 novembre 2025.</span> · <a class="online" href="https://theses.fr/2025EHES0116" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Peer-reviewed articles</span><span class="fr">Articles dans une revue à comité de lecture</span></h3>
+      <div class="entry forthcoming"><div class="yr">2027</div><div>
+        <p class="t">«&nbsp;Le Panthéon sous tension : quand le matrimoine fait vaciller les grands hommes&nbsp;» <span class="status"><span class="en">Forthcoming</span><span class="fr">À paraître</span></span></p>
+        <p class="src"><em>Nouvelles questions féministes</em>, vol. 46, n°1 · <span class="en">accepted at first review.</span><span class="fr">article accepté en première évaluation.</span></p></div></div>
+      <div class="entry"><div class="yr">2025</div><div>
+        <p class="t">«&nbsp;Présentes mais invisibles : les femmes dans la toponymie parisienne&nbsp;»</p>
+        <p class="src"><em>Annales de Géographie</em>, n°764 (4), p. 76–101 · <a class="online" href="https://shs.cairn.info/revue-annales-de-geographie-2025-4-page-76?lang=fr&amp;tab=resume" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">«&nbsp;Les collages contre les féminicides : le signe de l'appropriation de l'espace public&nbsp;»</p>
+        <p class="src"><em>Mosaïque</em>, n°21 · <a class="online" href="https://www.peren-revues.fr/mosaique/2588" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Book chapters</span><span class="fr">Chapitres d'ouvrage</span></h3>
+      <div class="entry"><div class="yr">2021</div><div>
+        <p class="t">«&nbsp;La rue, un espace de domination masculine&nbsp;»</p>
+        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 48–50. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2021</div><div>
+        <p class="t">«&nbsp;Les collages comme moyen de se réapproprier l'espace urbain&nbsp;»</p>
+        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 51–59. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2021</div><div>
+        <p class="t">«&nbsp;Le déséquilibre spatial des collages dans Paris&nbsp;»</p>
+        <p class="src"><span class="en">In </span><em>Notre colère sur vos murs</em>, Paris, Denoël, p. 60–67. · <a class="online" href="https://www.denoel.fr/catalogue/notre-colere-sur-vos-murs/9782207164341#block-feuilleter" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Datasets</span><span class="fr">Bases de données</span></h3>
+      <div class="entry"><div class="yr">2025</div><div>
+        <p class="t">«&nbsp;Genre des odonymes parisiens. Analyse des odonymes parisiens selon une approche genrée&nbsp;»</p>
+        <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.5BB98B95 · <a class="online" href="https://doi.org/10.34847/NKL.5BB98B95" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2025</div><div>
+        <p class="t">«&nbsp;Base de données des collages féministes parisiens (2019–2024)&nbsp;»</p>
+        <p class="src">NAKALA — Huma-Num, CNRS · DOI 10.34847/NKL.ABE2875S · <a class="online" href="https://doi.org/10.34847/NKL.ABE2875S" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Outreach</span><span class="fr">Vulgarisation</span></h3>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t"><span class="en">Guest contribution to the MOOC <em>Dénommer le monde : la politique des toponymes</em></span><span class="fr">Contribution au MOOC <em>Dénommer le monde : la politique des toponymes</em></span></p>
+        <p class="src"><span class="en">Module “Dominations et toponymie : postcolonialité et genre”, dir. Frédéric Giraut — UNESCO Chair in inclusive toponymy, University of Geneva. Segments: «&nbsp;Théories du genre dans l'espace public&nbsp;», «&nbsp;Les odonymes féminins dans le monde&nbsp;», «&nbsp;Un cas d'étude, la ville de Paris&nbsp;».</span><span class="fr">Module «&nbsp;Dominations et toponymie : postcolonialité et genre&nbsp;», sous la direction de Frédéric Giraut — Chaire UNESCO en toponymie inclusive, Université de Genève. Capsules : «&nbsp;Théories du genre dans l'espace public&nbsp;», «&nbsp;Les odonymes féminins dans le monde&nbsp;», «&nbsp;Un cas d'étude, la ville de Paris&nbsp;».</span> · <a class="online" href="https://www.unige.ch/sciences-societe/geo/etudes/mooc-denommer-le-monde-la-politique-des-toponymes" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2022</div><div>
+        <p class="t">«&nbsp;Raconte-moi ta thèse #13 — Ce que le matrimoine fait au patrimoine&nbsp;»</p>
+        <p class="src">EHESS Alumni.</p></div></div>
+    </div>
+    <p class="cv-cat"><span class="en">Talks</span><span class="fr">Communications</span></p>
+    <div class="group">
+      <h3><span class="en">International conferences</span><span class="fr">Colloques internationaux</span></h3>
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t">«&nbsp;Les odonymes féminins à Paris, une reproduction spatiale des inégalités de genre à l'œuvre dans la société ?&nbsp;»</p>
+        <p class="src"><span class="en">International conference, UNESCO Chair in inclusive toponymy (Geneva, Montpellier, Rouen) «&nbsp;Pour une approche interdisciplinaire de la toponymie&nbsp;», Montpellier — abstract accepted.</span><span class="fr">Colloque international de la Chaire UNESCO en toponymie inclusive (Genève, Montpellier, Rouen) «&nbsp;Pour une approche interdisciplinaire de la toponymie&nbsp;», Montpellier — résumé accepté.</span> · <a class="online" href="https://toponymie.sciencesconf.org/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t">“When the street becomes a site of memory: emotions, narration and contested heritage in femicide memorials in Paris”</p>
+        <p class="src">ERC <em>Frictions of Space</em> — «&nbsp;Tourism, memory and heritage&nbsp;», Amsterdam &amp; Wageningen.</p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">“Strategies for urban space appropriation. The case of Collages Féminicides Paris”</p>
+        <p class="src">35th International Geographical Congress (IGU/UGI), Dublin · <a class="online" href="https://igc2024dublin.org/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;Les odonymes féminins à Paris : vers un paysage mémoriel plus inclusif&nbsp;»</p>
+        <p class="src">3ᵉ Congrès international de l'Institut du Genre «&nbsp;No(s) Futur(s)&nbsp;», Toulouse · <a class="online" href="https://congresgenre23.sciencesconf.org/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;Ce que les collages contre les féminicides font à la ville&nbsp;»</p>
+        <p class="src">Colloque «&nbsp;Créatrices dans la cité&nbsp;», Université Gustave Eiffel, Champs-sur-Marne · <a class="online" href="https://mission-egalite.univ-gustave-eiffel.fr/actualites/actualites-details/colloque-cite-des-dames-creatrices-dans-la-cite" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Study days</span><span class="fr">Journées d'étude</span></h3>
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t">«&nbsp;La fabrique de l'interdisciplinarité : géographie et gender studies en dialogue dans le cadre d'une recherche doctorale&nbsp;»</p>
+        <p class="src">Journée d'étude «&nbsp;Les interdisciplinarités de la géographie avec les sciences sociales&nbsp;», Aubervilliers · <a class="online" href="https://geographie-cites.cnrs.fr/les-interdisciplinarites-de-la-geographie-avec-les-sciences-sociales/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t">«&nbsp;Cartographier les collages contre les féminicides à Paris&nbsp;»</p>
+        <p class="src">Journée d'étude «&nbsp;Du réel aux modèles : concilier l'objectif d'abstraction et l'imprécision de l'information&nbsp;», Paris. · <a class="online" href="https://dphn.parisgeo.cnrs.fr/journee/modeliser_le_reel.html" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2025</div><div>
+        <p class="t">«&nbsp;Mémoire des genres : l'espace urbain comme une archive&nbsp;»</p>
+        <p class="src">Journée d'étude internationale SFR ALLHiS «&nbsp;Genre, mémoire et sources&nbsp;», Saint-Étienne · <a class="online" href="https://www.fabula.org/actualites/126256/genre-memoire-et-sources.html" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">«&nbsp;À l'intersection de la commémoration et des mobilisations sociales : les collages commémorant des victimes de féminicides&nbsp;»</p>
+        <p class="src">Journée d'étude EHESS – Université de Genève «&nbsp;Enjeux féministes au prisme des graphies exposées&nbsp;», Aubervilliers · <a class="online" href="https://www.unige.ch/gedt/accueil/actualites-2024/enjeux-feministes-au-prisme-des-graphies-exposees/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;De la signature au monument : de quoi les collages contre les féminicides sont-ils le signe ?&nbsp;»</p>
+        <p class="src">Colloque «&nbsp;Signes, symboles, symptômes&nbsp;», Grenoble · <a class="online" href="https://iphig.univ-grenoble-alpes.fr/sites/default/files/Mediatheque/Colloques/affiche_doctorants_site.pdf" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2022</div><div>
+        <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien : le cas des odonymes&nbsp;»</p>
+        <p class="src">Journée d'étude «&nbsp;Femmes et odonymes&nbsp;» (PROGEVI), Lab'URBA, Champs-sur-Marne · <a class="online" href="https://progevi.hypotheses.org/94" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Research seminars</span><span class="fr">Séminaires de recherche</span></h3>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">«&nbsp;Les odonymes féminins à Paris, une politique volontariste qui pose question&nbsp;»</p>
+        <p class="src">Atelier «&nbsp;Matérialité&nbsp;», assemblée générale de l'UMR Géographie-cités, Roscoff · <a class="online" href="https://geographie-cites.cnrs.fr/events/ag-de-lumr-geographie-cites/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">«&nbsp;Peut-on parler de pôles de mémoire du genre à Paris ?&nbsp;»</p>
+        <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Chaîgnes.</p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t">«&nbsp;Comprendre les enjeux mémoriels des collages féministes par le prisme de l'espace&nbsp;»</p>
+        <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Chaîgnes.</p></div></div>
+      <div class="entry"><div class="yr">2022</div><div>
+        <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien ? Le cas des odonymes&nbsp;»</p>
+        <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Fontainebleau · <a class="online" href="https://geographie-cites.cnrs.fr/les-journees-des-doctorant%C2%B7e%C2%B7s-de-lequipe-ehgo/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
+      <h3><span class="en">Invited scientific events</span><span class="fr">Invitations à des événements scientifiques</span></h3>
+      <div class="entry"><div class="yr">2026</div><div>
+        <p class="t"><span class="en">Invited opening of the institutional session</span><span class="fr">Intervention d'ouverture de la session institutionnelle (sur invitation)</span></p>
+        <p class="src"><em>Per una toponomastica inclusiva. Dialoghi internazionali sui risultati della ricerca «&nbsp;L'odonomastica femminile nelle province dell'Insubria&nbsp;»</em>, Università degli Studi dell'Insubria, <span class="en">Como (Italy), 23 June 2026.</span><span class="fr">Côme (Italie), 23 juin 2026.</span></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t">“Towards a gender inclusive cityscape”</p>
+        <p class="src"><span class="en">Side event, 87th session of the UN CEDAW Committee</span><span class="fr">Évènement parallèle à la 87ᵉ session du Comité CEDAW de l'ONU</span> — Chaire UNESCO «&nbsp;Dénommer le monde&nbsp;», Genève · <a class="online" href="https://www.unige.ch/internationalrelations/en/iosngos/pre/events/towards-gender-inclusive-cityscape" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+      <div class="entry"><div class="yr">2024</div><div>
+        <p class="t"><span class="en">Moderation — “Narratives, representations, imaginaries and territorial identities”</span><span class="fr">Modération de l'axe «&nbsp;Récits, représentations, imaginaires et identités territoriales&nbsp;»</span></p>
+        <p class="src"><span class="en">Study day of the master's programme Territoires, Espaces et Sociétés (EHESS), Aubervilliers.</span><span class="fr">Journée d'étude du master Territoires, Espaces et Sociétés (EHESS), Aubervilliers.</span></p></div></div>
+      <div class="entry"><div class="yr">2023</div><div>
+        <p class="t"><span class="en">International symposium “Gender, place names and public space”</span><span class="fr">Symposium international «&nbsp;Genre, noms de lieux et espace public&nbsp;»</span></p>
+        <p class="src">Chaire UNESCO en toponymie inclusive, Genève · <a class="online" href="https://neotopo.hypotheses.org/8612" target="_blank" rel="noopener">Policy brief <span aria-hidden="true">↗</span></a></p></div></div>
+    </div><div class="group">
       <h3><span class="en">Public engagement</span><span class="fr">Médiation scientifique et culturelle</span></h3>
       <div class="entry"><div class="yr">2026</div><div>
         <p class="t"><span class="en">Talk within a school podcast project</span><span class="fr">Intervention dans un projet pédagogique de podcast</span></p>
@@ -604,14 +678,7 @@
         <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien ?&nbsp;»</p>
         <p class="src"><span class="en">National Institute of Geographic and Forest Information (IGN), Paris.</span><span class="fr">Institut national de l'information géographique et forestière (IGN), Paris.</span></p></div></div>
     </div>
-  </div>
-</section>
-
-<!-- ============ MEDIA ============ -->
-<section class="view" id="view-media">
-  <div class="wrap">
-    <p class="eyebrow"><span class="en">In the media</span><span class="fr">Dans les médias</span></p>
-    <h2><span class="en">In the media</span><span class="fr">Dans les médias</span></h2>
+    <p class="cv-cat"><span class="en">In the media</span><span class="fr">Médias</span></p>
     <div class="group">
       <div class="entry"><div class="yr">2026</div><div>
         <p class="t">«&nbsp;Rue Simone-Veil, rue Rosa-Parks… Les personnalités féminines désormais privilégiées pour baptiser les nouvelles voies&nbsp;»</p>
@@ -657,7 +724,7 @@
 </section>
 
 <footer>© 2026 Alexandra Mallah</footer>
-<div class="ver" id="ver">v65</div>
+<div class="ver" id="ver">v66</div>
 
 <div class="lightbox" id="lightbox" oncontextmenu="return false"><span class="lb-close" aria-hidden="true">×</span><span class="lb-nav lb-prev" id="lb-prev" role="button" aria-label="Image précédente">‹</span><span class="lb-nav lb-next" id="lb-next" role="button" aria-label="Image suivante">›</span><figure class="lb-fig"><img id="lightbox-img" src="" alt="" draggable="false"><figcaption class="lb-cap" id="lightbox-cap"></figcaption></figure></div>
 
@@ -679,7 +746,7 @@
   }
   function showView(v){
     document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id==='view-'+v));
-    document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('active', a.getAttribute('data-view')===v));
+    var navkey=v.indexOf('proj-')===0?'projects':v;document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('active', a.getAttribute('data-view')===navkey));
     closeMenu(); window.scrollTo(0,0);
     applyReveal(document.getElementById('view-'+v));
   }
@@ -700,7 +767,7 @@
     var v=document.getElementById('view-research'); if(v) v.scrollIntoView({behavior:'smooth',block:'start'});
   }
   function closeMenu(){document.getElementById('menu').classList.remove('open');}
-  applyReveal(document.getElementById('view-home'));
+  applyReveal(document.getElementById('view-projects'));
   (function(){
     if(_reduce) return;
     var hv=document.getElementById('view-home'), bl=document.querySelector('.home-blob');
@@ -725,7 +792,7 @@
     }
     function step(d){ if(group.length<2) return; idx=(idx+d+group.length)%group.length; render(); }
     function open(img){
-      var scope=img.closest('.doc-scroll');
+      var scope=img.closest('.fig-grid, .doc-scroll');
       group = scope ? Array.prototype.slice.call(scope.querySelectorAll('.doc img, .schema img')).filter(function(i){return i===img||i.offsetParent!==null;}) : [img];
       idx=group.indexOf(img); if(idx<0){ group=[img]; idx=0; }
       lb.classList.toggle('multi', group.length>1);
