@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=105
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=106
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -450,8 +450,8 @@ css='''
   .lb-cap .lic{display:block;font-family:var(--sans);font-size:11.5px;color:#bcae99;margin-top:3px;letter-spacing:0;opacity:1;text-decoration:none}
   .lb-cap .lic:hover{color:#d8cdb6}
   .foot-lic{display:block;margin-top:5px;font-size:12px;color:var(--ink-faint)}
-  .foot-lic a{color:var(--gold);text-decoration:none}
-  .foot-lic a:hover{text-decoration:underline}
+  .foot-lic a{color:inherit;font:inherit;text-decoration:underline}
+  .foot-lic a:hover{opacity:.7}
   .cite{margin:2px 0 26px}
   .cite summary{cursor:pointer;display:inline-block;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);list-style:none}
   .cite summary::-webkit-details-marker{display:none}
