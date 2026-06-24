@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=106
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=107
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -431,7 +431,7 @@ css='''
   .proj-wm-full{top:0;bottom:0;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%);mask-image:linear-gradient(to bottom,transparent,#000 24%)}
   .proj-wm-full img{height:100%;object-fit:cover;object-position:center}
   .proj-outputs .entry{border-bottom:none}
-  #view-proj-master .proj-wm{height:62vh;opacity:.2}
+  #view-proj-master .proj-wm{top:0;bottom:0;height:auto;opacity:.2;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 88%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 88%,transparent)}
   #view-proj-master .proj-wm img{height:100%;object-fit:cover;object-position:center center}
   .proj-right .proj-resume p{font-size:15.5px;line-height:1.62;margin:0 0 15px;text-align:justify;-webkit-hyphens:none;hyphens:none}
   .proj-right .thesis-photo{margin-top:8px}
