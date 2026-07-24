@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=108
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=109
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -176,6 +176,8 @@ body = '''
 <section class="view active" id="view-projects">
   <div class="wrap">
     <p class="eyebrow">%s</p>
+    <p class="home-affil"><span class="en">Postdoctoral researcher UPHF&nbsp;– LARSH</span><span class="fr">Postdoctorante UPHF&nbsp;– LARSH</span></p>
+    <p class="home-affil"><span class="en">Associated researcher UMR&nbsp;8504 Géographie-cités</span><span class="fr">Chercheuse associée UMR&nbsp;8504 Géographie-cités</span></p>
     <p class="proj-h">%s</p>
     <div class="proj-grid">
       <a class="proj-card" onclick="showView('proj-doctoral')" role="button" tabindex="0">
@@ -191,7 +193,7 @@ body = '''
   </div>
 </section>
 ''' % (
- L("Geographer &amp; architect · Postdoctoral researcher","Géographe &amp; architecte · Postdoctorante"),
+ L("Geographer &amp; architect","Géographe &amp; architecte"),
  L("Projects","Projets"),
  V, L("Doctoral project","Projet doctoral"), L("Geography of the invisible","Géographie de l'invisible"),
  V, L("Master's project","Projet de master"), L("Appropriating public space","Appropriation de l'espace public"),
@@ -408,6 +410,7 @@ css='''
   .proj-outputs .group{margin:0 0 18px}
   .proj-outputs .src,.proj-outputs .t{text-align:justify;-webkit-hyphens:none;hyphens:none}
   .eyebrow{font-size:14px;letter-spacing:.14em}
+  .home-affil{font-size:13.5px;color:var(--ink-mid);margin:2px 0 0;letter-spacing:.01em}
   .cv-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:0 0 30px}
   .cv-head h2{margin:0}
   .proj-nav .pn{position:fixed;top:50%;transform:translateY(-50%);z-index:30;display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer}
