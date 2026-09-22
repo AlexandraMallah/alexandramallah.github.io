@@ -46,7 +46,7 @@
   console.log('%cDr Alexandra Mallah — site v' + BUILD, 'color:#8a6d3b;font-weight:bold');
   (function(){
     try{
-      fetch('version.json?_=' + Date.now(), {cache:'no-store'})
+      fetch('version.json?v=' + BUILD + '&_=' + Date.now(), {cache:'no-store'})
         .then(function(r){ return r.ok ? r.json() : null; })
         .then(function(d){
           if(d && d.build > BUILD && !sessionStorage.getItem('rel' + d.build)){
