@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=120
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=121
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -27,8 +27,10 @@ def gt(g):
 
 pub=between('<!-- ============ PUBLICATIONS','<!-- ============ TALKS')
 tal=between('<!-- ============ TALKS','<!-- ============ MEDIA')
-med=between('<!-- ============ MEDIA','<!-- ============ CONTACT')
-PUBG=groups(pub); TALG=groups(tal); MEDG=groups(med)
+med=between('<!-- ============ MEDIA','<!-- ============ DISTINCTIONS')
+dis=between('<!-- ============ DISTINCTIONS','<!-- ============ ACTIVITIES')
+act=between('<!-- ============ ACTIVITIES','<!-- ============ CONTACT')
+PUBG=groups(pub); TALG=groups(tal); MEDG=groups(med); DISG=groups(dis); ACTG=groups(act)
 book=[g for g in PUBG if 'book chapters' in gt(g).lower()]
 pub_nobook=[g for g in PUBG if g not in book]
 thesis_card=match_div(H,H.index('<div class="card">',H.index('id="p-thesis"')))
@@ -325,12 +327,18 @@ body += '''
     %s
     <p class="cv-cat">%s</p>
     %s
+    <p class="cv-cat">%s</p>
+    %s
+    <p class="cv-cat">%s</p>
+    %s
   </div>
 </section>
 ''' % (L("Download CV","Télécharger le CV"),
+ L("PhD thesis prize","Prix de thèse"), OUTP(DISG),
  L("Publications","Publications"), OUTP(PUBG),
  L("Talks","Communications"), OUTP(TALG),
- L("In the media","Médias"), OUTP(MEDG))
+ L("In the media","Médias"), OUTP(MEDG),
+ L("Scientific activities &amp; events","Activités scientifiques &amp; organisation d'événements"), OUTP(ACTG))
 
 # ---------- splice ----------
 start=H.index('<section class="view active" id="view-home">')
