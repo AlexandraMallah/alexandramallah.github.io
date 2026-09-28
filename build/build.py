@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=136
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=137
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -271,21 +271,6 @@ DOCTORAL_TALKS = '''
         <div class="entry"><div class="yr">2023</div><div>
           <p class="t"><span class="en">International symposium "Gender, place names and public space"</span><span class="fr">Symposium international «&nbsp;Genre, noms de lieux et espace public&nbsp;»</span></p>
           <p class="src">Chaire UNESCO en toponymie inclusive, Genève, <span class="en">5–6 April 2023.</span><span class="fr">5–6 avril 2023.</span> · <a class="online" href="https://neotopo.hypotheses.org/8612" target="_blank" rel="noopener">Policy brief <span aria-hidden="true">↗</span></a></p></div></div>
-      </div>
-      <div class="group">
-        <h3><span class="en">Public engagement</span><span class="fr">Médiation scientifique et culturelle</span></h3>
-        <div class="entry"><div class="yr">2024</div><div>
-          <p class="t"><span class="en">Round table "Archives and traces: the difficulty of building a matrimoine"</span><span class="fr">Table ronde «&nbsp;Archives et traces&nbsp;: de la difficulté de constituer un matrimoine&nbsp;»</span></p>
-          <p class="src">Philharmonie de Paris, <span class="en">9 March 2024.</span><span class="fr">9 mars 2024.</span> · <a class="online" href="https://philharmoniedeparis.fr/fr/activite/forum/26791-matrimoine-pour-faire-genre" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
-        <div class="entry"><div class="yr">2023</div><div>
-          <p class="t">«&nbsp;Les noms de rues féminins à Paris : une politique urbaine qui pose question&nbsp;»</p>
-          <p class="src"><span class="en">Talk to senior high-school classes, Lycée Victor Hugo, Paris, 18 April 2023.</span><span class="fr">Intervention auprès de classes de première, lycée Victor Hugo, Paris, 18 avril 2023.</span></p></div></div>
-        <div class="entry"><div class="yr">2022</div><div>
-          <p class="t">«&nbsp;Enjeux et limites des odonymes féminins à Paris&nbsp;»</p>
-          <p class="src"><span class="en">Talk to senior high-school classes, Lycée Victor Hugo, Paris, 13 May 2022.</span><span class="fr">Intervention auprès de classes de première, lycée Victor Hugo, Paris, 13 mai 2022.</span></p></div></div>
-        <div class="entry"><div class="yr">2022</div><div>
-          <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien&nbsp;?&nbsp;»</p>
-          <p class="src"><span class="en">National Institute of Geographic and Forest Information (IGN), Paris, 8 March 2022.</span><span class="fr">Institut national de l'information géographique et forestière (IGN), Paris, 8 mars 2022.</span></p></div></div>
       </div>
 '''
 
