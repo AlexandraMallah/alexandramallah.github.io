@@ -366,20 +366,23 @@ body += '''
       </div>
       <div class="proj-prod">
         <p class="proj-lbl">%s</p>
-        <div class="proj-outputs">
-          <h4 class="outputs-h">%s</h4>
-          <div class="entry forthcoming"><div class="yr">2026</div><div>
-            <p class="t">«&nbsp;Comprendre les pratiques de mobilités des frontalier·es franco-belges par le prisme du géotracking&nbsp;» <span class="status">%s</span></p>
-            <p class="src">%s</p></div></div>
-        </div>
+        <p class="proj-soon">%s</p>
       </div>
       <div class="proj-right">
         <div class="proj-resume">%s</div>
         <p style="margin-top:12px">%s</p>
       </div>
     </div>
+    <div class="proj-talks-full">
+      <div class="group">
+        <h3><span class="en">Talks</span><span class="fr">Communications</span></h3>
+        <div class="entry forthcoming"><div class="yr">2026</div><div>
+          <p class="t">« Comprendre les pratiques de mobilités des frontalier·es franco-belges par le prisme du géotracking » <span class="status"><span class="en">Abstract accepted</span><span class="fr">Résumé accepté</span></span></p>
+          <p class="src"><span class="en">Workshop of the MUTISE axis, CPER RITMEA project – Fédération de Recherche TTM (Hauts-de-France) “Axe 6 : Impact socio-économique et territorial des mutations de la mobilité : bilan et perspectives du CPER RITMEA dans les Hauts-de-France”, Valenciennes, 3 December 2026.</span><span class="fr">Workshop de l’axe MUTISE du projet CPER RITMEA – Fédération de Recherche TTM (Hauts-de-France) « Axe 6 : Impact socio-économique et territorial des mutations de la mobilité : bilan et perspectives du CPER RITMEA dans les Hauts-de-France », Valenciennes, 3 décembre 2026.</span></p></div></div>
+      </div>
+    </div>
     %s
-    <p class="proj-copy">© 2026 Alexandra Mallah<span class="foot-lic"><span class="en">Figures licensed under </span><span class="fr">Figures sous licence </span><a class="lic-inline" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND&nbsp;4.0</a></span></p>
+    <p class="proj-copy">© 2026 Alexandra Mallah<span class="foot-lic"><span class="en">Figures licensed under </span><span class="fr">Figures sous licence </span><a class="lic-inline" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a></span></p>
     </div></div>
   </div>
 </section>
@@ -388,10 +391,7 @@ body += '''
  rit_h3,
  L("Since 2026 · LARSH, UPHF · RITMEA project<br>in collaboration with Thomas Pfirsch and Guillaume Schmitt","2026–présent · LARSH, UPHF · projet RITMEA<br>en collaboration avec Thomas Pfirsch et Guillaume Schmitt"),
  L("Outputs","Productions"),
- L("Talks","Communications"),
- L("Abstract accepted","Résumé accepté"),
- L('Workshop of the MUTISE axis, CPER RITMEA project–Fédération de Recherche TTM (Hauts-de-France) «Axe 6 : Impact socio-économique et territorial des mutations de la mobilité : bilan et perspectives du CPER RITMEA dans les Hauts-de-France», Valenciennes, 3 December 2026.',
-   'Workshop de l’axe MUTISE du projet CPER RITMEA–Fédération de Recherche TTM (Hauts-de-France) « Axe 6 : Impact socio-économique et territorial des mutations de la mobilité : bilan et perspectives du CPER RITMEA dans les Hauts-de-France », Valenciennes, 3 décembre 2026.'),
+ L("Outputs and graphic documents to come.","Productions et documents graphiques à venir."),
  rit_body, rit_link,
  projnav('proj-master',MT,'proj-doctoral',DT))
 
