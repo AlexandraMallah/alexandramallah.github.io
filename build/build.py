@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=131
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=132
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -415,6 +415,7 @@ css='''
   .proj-info .thesis-jury p{margin:0 0 8px}
   .proj-lbl{font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:30px 0 14px}
   .proj-soon{color:var(--ink-faint);font-style:italic;font-size:14.5px;margin:6px 0 0}
+  .outputs-h{font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:24px 0 12px}
   .proj-outputs .group{margin:0 0 18px}
   .proj-outputs .src,.proj-outputs .t{text-align:justify;-webkit-hyphens:none;hyphens:none}
   .eyebrow{font-size:14px;letter-spacing:.14em}
