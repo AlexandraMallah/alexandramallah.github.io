@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=133
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=134
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -236,7 +236,82 @@ body += '''
  th_h3,
  L("2021–2025 · UMR Géographie-cités, EHESS","2021–2025 · UMR Géographie-cités, EHESS"),
  th_sub, th_jury,
- L("Outputs","Productions"), OUTP(pub_nobook),
+ L("Outputs","Productions"), OUTP(pub_nobook) + '''
+        <h4 class="outputs-h"><span class="en">International conferences</span><span class="fr">Colloques internationaux</span></h4>
+        <div class="entry forthcoming"><div class="yr">2026</div><div>
+          <p class="t">«&nbsp;Les odonymes féminins à Paris, une reproduction spatiale des inégalités de genre à l'œuvre dans la société&nbsp;?&nbsp;» <span class="status"><span class="en">Abstract accepted</span><span class="fr">Résumé accepté</span></span></p>
+          <p class="src"><span class="en">International conference, UNESCO Chair in inclusive toponymy «&nbsp;Pour une approche interdisciplinaire de la toponymie&nbsp;», Montpellier, 18–20 June 2026.</span><span class="fr">Colloque international de la Chaire UNESCO en toponymie inclusive «&nbsp;Pour une approche interdisciplinaire de la toponymie&nbsp;», Montpellier, 18–20 juin 2026.</span> · <a class="online" href="https://toponymie.sciencesconf.org/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2026</div><div>
+          <p class="t">"When the street becomes a site of memory: emotions, narration and contested heritage in femicide memorials in Paris"</p>
+          <p class="src">ERC <em>Frictions of Space</em> — «&nbsp;Tourism, memory and heritage&nbsp;», Amsterdam &amp; Wageningen, <span class="en">1–3 June 2026.</span><span class="fr">1ᵉʳ–3 juin 2026.</span></p></div></div>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t">"Strategies for urban space appropriation. The case of Collages Féminicides Paris"</p>
+          <p class="src">35th International Geographical Congress (IGU/UGI), Dublin, <span class="en">24–30 August 2024.</span><span class="fr">24–30 août 2024.</span> · <a class="online" href="https://igc2024dublin.org/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2023</div><div>
+          <p class="t">«&nbsp;Les odonymes féminins à Paris : vers un paysage mémoriel plus inclusif&nbsp;»</p>
+          <p class="src">3ᵉ Congrès international de l'Institut du Genre «&nbsp;No(s) Futur(s)&nbsp;», Toulouse, <span class="en">4–7 July 2023.</span><span class="fr">4–7 juillet 2023.</span> · <a class="online" href="https://congresgenre23.sciencesconf.org/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2023</div><div>
+          <p class="t">«&nbsp;Ce que les collages contre les féminicides font à la ville&nbsp;»</p>
+          <p class="src">Colloque «&nbsp;Créatrices dans la cité&nbsp;», Université Gustave Eiffel, Champs-sur-Marne, <span class="en">12–14 June 2023.</span><span class="fr">12–14 juin 2023.</span> · <a class="online" href="https://mission-egalite.univ-gustave-eiffel.fr/actualites/actualites-details/colloque-cite-des-dames-creatrices-dans-la-cite" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <h4 class="outputs-h"><span class="en">Study days</span><span class="fr">Journées d'étude</span></h4>
+        <div class="entry"><div class="yr">2026</div><div>
+          <p class="t">«&nbsp;La fabrique de l'interdisciplinarité : géographie et gender studies en dialogue dans le cadre d'une recherche doctorale&nbsp;»</p>
+          <p class="src">Journée d'étude «&nbsp;Les interdisciplinarités de la géographie avec les sciences sociales&nbsp;», Aubervilliers, <span class="en">26–27 March 2026.</span><span class="fr">26–27 mars 2026.</span> · <a class="online" href="https://geographie-cites.cnrs.fr/les-interdisciplinarites-de-la-geographie-avec-les-sciences-sociales/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2026</div><div>
+          <p class="t">«&nbsp;Cartographier les collages contre les féminicides à Paris&nbsp;»</p>
+          <p class="src">Journée d'étude «&nbsp;Du réel aux modèles : concilier l'objectif d'abstraction et l'imprécision de l'information&nbsp;», Paris, <span class="en">30 January 2026.</span><span class="fr">30 janvier 2026.</span> · <a class="online" href="https://geographie-cites.cnrs.fr/du-reel-aux-modeles-concilier-lobjectif-dabstraction-et-limprecision-de-linformation/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2025</div><div>
+          <p class="t">«&nbsp;Mémoire des genres : l'espace urbain comme une archive&nbsp;»</p>
+          <p class="src">Journée d'étude internationale SFR ALLHiS «&nbsp;Genre, mémoire et sources&nbsp;», Saint-Étienne, <span class="en">10–11 April 2025.</span><span class="fr">10–11 avril 2025.</span> · <a class="online" href="https://sfr-allhis.fr/actualites/journee-detude-genre-memoire-et-sources" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t">«&nbsp;À l'intersection de la commémoration et des mobilisations sociales : les collages commémorant des victimes de féminicides&nbsp;»</p>
+          <p class="src">Journée d'étude EHESS – Université de Genève «&nbsp;Enjeux féministes au prisme des graphies exposées&nbsp;», Aubervilliers · <a class="online" href="https://www.unige.ch/gedt/accueil/actualites-2024/enjeux-feministes-au-prisme-des-graphies-exposees/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2023</div><div>
+          <p class="t">«&nbsp;De la signature au monument : de quoi les collages contre les féminicides sont-ils le signe&nbsp;?&nbsp;»</p>
+          <p class="src">Colloque «&nbsp;Signes, symboles, symptômes&nbsp;», Grenoble, <span class="en">1–2 March 2023.</span><span class="fr">1–2 mars 2023.</span></p></div></div>
+        <div class="entry"><div class="yr">2022</div><div>
+          <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien : le cas des odonymes&nbsp;»</p>
+          <p class="src">Journée d'étude «&nbsp;Femmes et odonymes&nbsp;» (PROGEVI), Lab'URBA, Champs-sur-Marne, <span class="en">13 January 2022.</span><span class="fr">13 janvier 2022.</span> · <a class="online" href="https://progevi.hypotheses.org/1107" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <h4 class="outputs-h"><span class="en">Research seminars</span><span class="fr">Séminaires de recherche</span></h4>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t">«&nbsp;Les odonymes féminins à Paris, une politique volontariste qui pose question&nbsp;»</p>
+          <p class="src">Atelier «&nbsp;Matérialité&nbsp;», assemblée générale de l'UMR Géographie-cités, Roscoff, <span class="en">3–5 April 2024.</span><span class="fr">3–5 avril 2024.</span> · <a class="online" href="https://geographie-cites.cnrs.fr/events/ag-de-lumr-geographie-cites/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t">«&nbsp;Peut-on parler de pôles de mémoire du genre à Paris&nbsp;?&nbsp;»</p>
+          <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Chaîgnes, <span class="en">3–5 July 2024.</span><span class="fr">3–5 juillet 2024.</span></p></div></div>
+        <div class="entry"><div class="yr">2023</div><div>
+          <p class="t">«&nbsp;Comprendre les enjeux mémoriels des collages féministes par le prisme de l'espace&nbsp;»</p>
+          <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Chaîgnes, <span class="en">28–30 June 2023.</span><span class="fr">28–30 juin 2023.</span></p></div></div>
+        <div class="entry"><div class="yr">2022</div><div>
+          <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien ? Le cas des odonymes&nbsp;»</p>
+          <p class="src">Séminaire de l'équipe EHGO, UMR Géographie-cités, Fontainebleau, <span class="en">27–28 January 2022.</span><span class="fr">27–28 janvier 2022.</span> · <a class="online" href="https://geographie-cites.cnrs.fr/les-journees-des-doctorant%C2%B7e%C2%B7s-de-lequipe-ehgo/" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <h4 class="outputs-h"><span class="en">Invited scientific events</span><span class="fr">Invitations à des événements scientifiques</span></h4>
+        <div class="entry"><div class="yr">2026</div><div>
+          <p class="t">«&nbsp;Compter ou rendre visible ? La féminisation des noms de rues parisiennes à l'épreuve de la géographie&nbsp;»</p>
+          <p class="src"><span class="en">Invited opening, <em>Per una toponomastica inclusiva</em>, Università degli Studi dell'Insubria, Como (Italy), 23 June 2026.</span><span class="fr">Intervention d'ouverture (sur invitation), <em>Per una toponomastica inclusiva</em>, Università degli Studi dell'Insubria, Côme (Italie), 23 juin 2026.</span> · <a class="online" href="https://www.uninsubria.it/ateneo/ci-presentiamo/comunicazione/tutte-le-notizie/una-toponomastica-inclusiva-un-convegno" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t">"Towards a gender inclusive cityscape"</p>
+          <p class="src"><span class="en">Side event, 87th session of the UN CEDAW Committee — Chaire UNESCO «&nbsp;Dénommer le monde&nbsp;», Geneva, 12 February 2024.</span><span class="fr">Évènement parallèle à la 87ᵉ session du Comité CEDAW de l'ONU — Chaire UNESCO «&nbsp;Dénommer le monde&nbsp;», Genève, 12 février 2024.</span> · <a class="online" href="https://www.unige.ch/internationalrelations/en/iosngos/pre/events/towards-gender-inclusive-cityscape" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t"><span class="en">Moderation — "Narratives, representations, imaginaries and territorial identities"</span><span class="fr">Modération de l'axe «&nbsp;Récits, représentations, imaginaires et identités territoriales&nbsp;»</span></p>
+          <p class="src"><span class="en">Study day of the master's programme Territoires, Espaces et Sociétés (EHESS), Aubervilliers, 25 April 2024.</span><span class="fr">Journée d'étude du master Territoires, Espaces et Sociétés (EHESS), Aubervilliers, 25 avril 2024.</span></p></div></div>
+        <div class="entry"><div class="yr">2023</div><div>
+          <p class="t"><span class="en">International symposium "Gender, place names and public space"</span><span class="fr">Symposium international «&nbsp;Genre, noms de lieux et espace public&nbsp;»</span></p>
+          <p class="src">Chaire UNESCO en toponymie inclusive, Genève, <span class="en">5–6 April 2023.</span><span class="fr">5–6 avril 2023.</span> · <a class="online" href="https://neotopo.hypotheses.org/8612" target="_blank" rel="noopener">Policy brief <span aria-hidden="true">↗</span></a></p></div></div>
+        <h4 class="outputs-h"><span class="en">Public engagement</span><span class="fr">Médiation scientifique et culturelle</span></h4>
+        <div class="entry"><div class="yr">2024</div><div>
+          <p class="t"><span class="en">Round table "Archives and traces: the difficulty of building a matrimoine"</span><span class="fr">Table ronde «&nbsp;Archives et traces&nbsp;: de la difficulté de constituer un matrimoine&nbsp;»</span></p>
+          <p class="src">Philharmonie de Paris, <span class="en">9 March 2024.</span><span class="fr">9 mars 2024.</span> · <a class="online" href="https://philharmoniedeparis.fr/fr/activite/forum/26791-matrimoine-pour-faire-genre" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">↗</span></a></p></div></div>
+        <div class="entry"><div class="yr">2023</div><div>
+          <p class="t">«&nbsp;Les noms de rues féminins à Paris : une politique urbaine qui pose question&nbsp;»</p>
+          <p class="src"><span class="en">Talk to senior high-school classes, Lycée Victor Hugo, Paris, 18 April 2023.</span><span class="fr">Intervention auprès de classes de première, lycée Victor Hugo, Paris, 18 avril 2023.</span></p></div></div>
+        <div class="entry"><div class="yr">2022</div><div>
+          <p class="t">«&nbsp;Enjeux et limites des odonymes féminins à Paris&nbsp;»</p>
+          <p class="src"><span class="en">Talk to senior high-school classes, Lycée Victor Hugo, Paris, 13 May 2022.</span><span class="fr">Intervention auprès de classes de première, lycée Victor Hugo, Paris, 13 mai 2022.</span></p></div></div>
+        <div class="entry"><div class="yr">2022</div><div>
+          <p class="t">«&nbsp;Quelles représentations de la mémoire des femmes dans l'espace public parisien&nbsp;?&nbsp;»</p>
+          <p class="src"><span class="en">National Institute of Geographic and Forest Information (IGN), Paris, 8 March 2022.</span><span class="fr">Institut national de l'information géographique et forestière (IGN), Paris, 8 mars 2022.</span></p></div></div>
+''',
  th_resume, soutenance,
  L("Graphic documents","Documents graphiques"), doc_docs,
  projnav('proj-postdoc',PT,'proj-master',MT))
@@ -342,7 +417,7 @@ body += '''
   </div>
 </section>
 ''' % (L("Download CV","Télécharger le CV"),
- L("PhD thesis prize","Prix de thèse"), OUTP(DISG),
+ L("Awards &amp; distinctions","Prix et distinctions"), OUTP(DISG),
  L("Publications","Publications"), OUTP(PUBG),
  L("Talks","Communications"), OUTP(TALG),
  L("In the media","Médias"), OUTP(MEDG),
