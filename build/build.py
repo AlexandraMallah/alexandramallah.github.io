@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=137
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=138
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -501,7 +501,6 @@ css='''
   .proj-talks-full{padding:32px 0 8px}
   .proj-talks-full .outputs-h{margin-top:32px}
   .proj-talks-full .outputs-h:first-child{margin-top:0}
-  .proj-talks-full .entry{max-width:860px}
   .proj-talks-full .t,.proj-talks-full .src{text-align:justify;-webkit-hyphens:none;hyphens:none}
   .proj-outputs .group{margin:0 0 18px}
   .proj-outputs .src,.proj-outputs .t{text-align:justify;-webkit-hyphens:none;hyphens:none}
