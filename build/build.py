@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=132
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=133
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -292,7 +292,12 @@ body += '''
       </div>
       <div class="proj-prod">
         <p class="proj-lbl">%s</p>
-        <p class="proj-soon">%s</p>
+        <div class="proj-outputs">
+          <h4 class="outputs-h">%s</h4>
+          <div class="entry forthcoming"><div class="yr">2026</div><div>
+            <p class="t">«&nbsp;Comprendre les pratiques de mobilités des frontalier·es franco-belges par le prisme du géotracking&nbsp;» <span class="status">%s</span></p>
+            <p class="src">%s</p></div></div>
+        </div>
       </div>
       <div class="proj-right">
         <div class="proj-resume">%s</div>
@@ -309,7 +314,10 @@ body += '''
  rit_h3,
  L("Since 2026 · LARSH, UPHF · RITMEA project<br>in collaboration with Thomas Pfirsch and Guillaume Schmitt","2026–présent · LARSH, UPHF · projet RITMEA<br>en collaboration avec Thomas Pfirsch et Guillaume Schmitt"),
  L("Outputs","Productions"),
- L("Outputs and graphic documents to come.","Productions et documents graphiques à venir."),
+ L("Talks","Communications"),
+ L("Abstract accepted","Résumé accepté"),
+ L('Workshop of the MUTISE axis, CPER RITMEA project–Fédération de Recherche TTM (Hauts-de-France) «Axe 6 : Impact socio-économique et territorial des mutations de la mobilité : bilan et perspectives du CPER RITMEA dans les Hauts-de-France», Valenciennes, 3 December 2026.',
+   'Workshop de l’axe MUTISE du projet CPER RITMEA–Fédération de Recherche TTM (Hauts-de-France) « Axe 6 : Impact socio-économique et territorial des mutations de la mobilité : bilan et perspectives du CPER RITMEA dans les Hauts-de-France », Valenciennes, 3 décembre 2026.'),
  rit_body, rit_link,
  projnav('proj-master',MT,'proj-doctoral',DT))
 
