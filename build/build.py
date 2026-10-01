@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=138
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=139
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -588,4 +588,5 @@ H=H.replace('--maxw:920px','--maxw:1040px')
 H=re.sub(r'var BUILD = \d+;','var BUILD = %d;'%V,H)
 H=re.sub(r'<div class="ver" id="ver">v\d+</div>','<div class="ver" id="ver">v%d</div>'%V,H)
 open(OUT,"w",encoding="utf-8").write(H)
+import json; open(os.path.join(HERE,"..","version.json"),"w").write(json.dumps({"build":V}))
 print("OK written. length",len(H))
