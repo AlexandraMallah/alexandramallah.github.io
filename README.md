@@ -121,3 +121,16 @@ Refonte 3 onglets · palette froide + Spectral · filigranes par projet · navig
 **Option jamais tranchée** : appliquer le « plein écran » du postdoc à la **page thèse** (actuellement en `cover` qui remplit le hero) — à décider si on veut uniformiser.
 
 *(Projet distinct, autre dépôt : « Mon-Tableau-de-Vie » — ne pas confondre.)*
+
+---
+
+## Annexe — fichiers de connexion de « Mon Tableau de Vie » (`__/`, `.nojekyll`)
+
+Le dossier caché `__/auth/` (+ `__/firebase/init.json`) contient les pages de connexion Google de Firebase
+(projet `mon-tableau-de-vie`), copiées depuis `https://mon-tableau-de-vie.firebaseapp.com/__/auth/`.
+Elles permettent à l'appli **Mon Tableau de Vie installée sur l'écran d'accueil d'un iPhone** de se
+connecter avec Google : Safari bloque la connexion quand la page de connexion est sur un autre site.
+- **Ne pas supprimer** `__/` ni `.nojekyll` (sans `.nojekyll`, GitHub Pages ignore les dossiers en `_`).
+- `build/build.py` ne touche pas à ces fichiers.
+- À recopier de temps en temps (Firebase met à jour `handler.js` / `iframe.js`) :
+  `for f in handler.js experiments.js iframe.js; do curl -sf -o "__/auth/$f" "https://mon-tableau-de-vie.firebaseapp.com/__/auth/$f"; done`
