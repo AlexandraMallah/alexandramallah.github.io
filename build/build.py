@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=149
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=150
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -364,10 +364,6 @@ body += '''
         <h1 class="proj-h1">%s</h1>
         <p class="proj-affil">%s</p>
       </div>
-      <div class="proj-prod">
-        <p class="proj-lbl">%s</p>
-        <p class="proj-soon">%s</p>
-      </div>
       <div class="proj-right">
         <div class="proj-resume">%s</div>
         <p style="margin-top:12px">%s</p>
@@ -390,8 +386,6 @@ body += '''
  L("Postdoctoral project · 2026–present","Projet postdoctoral · 2026–présent"),
  rit_h3,
  L("Since 2026 · LARSH, UPHF · RITMEA project<br>in collaboration with Thomas Pfirsch and Guillaume Schmitt","2026–présent · LARSH, UPHF · projet RITMEA<br>en collaboration avec Thomas Pfirsch et Guillaume Schmitt"),
- L("Outputs","Productions"),
- L("Outputs and graphic documents to come.","Productions et documents graphiques à venir."),
  rit_body, rit_link,
  projnav('proj-master',MT,'proj-doctoral',DT))
 
