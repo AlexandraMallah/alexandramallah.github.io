@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=165
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=166
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -335,13 +335,13 @@ body += '''
         <h1 class="proj-h1"><em>L'appropriation de l'espace public par les mouvements sociaux féministes : le cas de Collages Féminicides Paris</em></h1>
         <p class="proj-affil">%s</p>
       </div>
-      <div class="proj-prod">
-        <p class="proj-lbl">%s</p>
-        <div class="proj-outputs">%s</div>
-      </div>
       <div class="proj-right">
         <div class="proj-resume"><p>%s</p></div>
       </div>
+    </div>
+    <div class="proj-talks-full">
+      <p class="proj-lbl">%s</p>
+      <div class="proj-outputs">%s</div>
     </div>
     </div></div>
     <h2 class="proj-sec">%s</h2>
@@ -352,8 +352,8 @@ body += '''
 ''' % (wm('master',img='fond.jpg'), L("← Projects","← Projets"),
  L("Master's project · 2020–2021","Projet de master · 2020–2021"),
  L("Master Territoires, espaces et sociétés<br>EHESS, 2020–2021<br>supervised by Claudia Damasceno Fonseca","Master Territoires, espaces et sociétés<br>EHESS, 2020–2021<br>dir. Claudia Damasceno Fonseca"),
- L("Outputs","Productions"), master_thesis_output+OUTP(book),
  L(master_desc_en,master_desc_fr),
+ L("Outputs","Productions"), master_thesis_output+OUTP(book),
  L("Graphic documents","Documents graphiques"),
  CITE+'<div class="fig-section"><h3 class="fig-h">%s</h3>%s</div>'%(L("Maps","Cartographies"),master_docs),
  projnav('proj-doctoral',DT,'proj-postdoc',PT))
