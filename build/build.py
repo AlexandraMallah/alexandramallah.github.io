@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, os
 HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,"..","index.html")
-H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=164
+H=open(os.path.join(HERE,"base.html"),encoding="utf-8").read(); V=165
 IMGROOT=os.path.join(HERE,"..","images","projets")
 
 def between(a,b,s=H): i=s.index(a); return s[i:s.index(b,i)]
@@ -161,6 +161,12 @@ ORD_master=["distribution-collages-folie-mericourt"]
 master_docs = gallery("master","",ORD_master,ar="9/10")
 
 OUTP=lambda gs: ''.join(gs)
+master_thesis_output='''<div class="group">
+  <h3><span class="en">Master's thesis</span><span class="fr">Mémoire de master</span></h3>
+  <div class="entry"><div class="yr">2021</div><div>
+    <p class="t">&laquo;&nbsp;L&rsquo;appropriation de l&rsquo;espace public par les mouvements sociaux f&eacute;ministes&nbsp;: le cas de Collages F&eacute;minicides Paris&nbsp;&raquo;</p>
+    <p class="src"><span class="en">Master&rsquo;s thesis (Master 2 Territoires, Espaces et Soci&eacute;t&eacute;s), dir. Claudia Damasceno Fonseca, &Eacute;cole des Hautes &Eacute;tudes en Sciences Sociales, Paris.</span><span class="fr">M&eacute;moire de Master 2 Territoires, Espaces et Soci&eacute;t&eacute;s, dir. Claudia Damasceno Fonseca, &Eacute;cole des Hautes &Eacute;tudes en Sciences Sociales, Paris.</span> &middot; <a class="online" href="https://dumas.ccsd.cnrs.fr/dumas-04155501v1" target="_blank" rel="noopener"><span class="vis-hidden"><span class="en">View online</span><span class="fr">Voir en ligne</span></span><span aria-hidden="true">&nearr;</span></a></p></div></div>
+</div>'''
 
 # ---------- new body ----------
 def L(en,fr): return '<span class="en">%s</span><span class="fr">%s</span>'%(en,fr)
@@ -346,7 +352,7 @@ body += '''
 ''' % (wm('master',img='fond.jpg'), L("← Projects","← Projets"),
  L("Master's project · 2020–2021","Projet de master · 2020–2021"),
  L("Master Territoires, espaces et sociétés<br>EHESS, 2020–2021<br>supervised by Claudia Damasceno Fonseca","Master Territoires, espaces et sociétés<br>EHESS, 2020–2021<br>dir. Claudia Damasceno Fonseca"),
- L("Outputs","Productions"), OUTP(book),
+ L("Outputs","Productions"), master_thesis_output+OUTP(book),
  L(master_desc_en,master_desc_fr),
  L("Graphic documents","Documents graphiques"),
  CITE+'<div class="fig-section"><h3 class="fig-h">%s</h3>%s</div>'%(L("Maps","Cartographies"),master_docs),
